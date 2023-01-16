@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.rizkiramadhan.aplikasiTA" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Base64">
+        <param name="android-package" value="com.badrit.Base64.Base64Plugin" />
+    </feature>
+    <feature name="ActionSheet">
+        <param name="android-package" value="nl.xservices.plugins.actionsheet.ActionSheet" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="CordovaHttpPlugin">
+        <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin" />
+    </feature>
+    <feature name="AppsFlyerPlugin">
+        <param name="android-package" value="com.appsflyer.cordova.plugin.AppsFlyerPlugin" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
+    <feature name="CacheClear">
+        <param name="android-package" value="com.anrip.cordova.CacheClear" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="DateTimePicker">
+        <param name="android-package" value="com.alexanderploner.datetimepicker.DateTimePicker" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="Market">
+        <param name="android-package" value="com.xmartlabs.cordova.market.Market" />
+    </feature>
+    <feature name="SpinnerDialog">
+        <param name="android-package" value="com.greybax.spinnerdialog.SpinnerDialog" />
+    </feature>
+    <feature name="NativeStorage">
+        <param name="android-package" value="NativeStorage" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="OnDestroyPlugin">
+        <param name="android-package" value="com.flyingsoftgames.ondestroyplugin.OnDestroyPlugin" />
+    </feature>
+    <feature name="SpinnerDialog">
+        <param name="android-package" value="hu.dpal.phonegap.plugins.SpinnerDialog" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="ExitApp">
+        <param name="android-package" value="org.apache.cordova.exitapp.ExitApp" />
+    </feature>
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
+    <feature name="RequestLocationAccuracy">
+        <param name="android-package" value="cordova.plugin.RequestLocationAccuracy" />
+    </feature>
+    <name>TPA Al Muhibbin</name>
+    <description>Aplikasi TPA Al Muhibbin</description>
+    <author email="dev.rizkiramadhan@gmail.com" href="https://cordova.apache.org">
+        TPA Al Muhibbin
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/icon/android/icon-36-ldpi-new.png" />
+    <icon density="mdpi" src="res/icon/android/icon-48-mdpi-new.png" />
+    <icon density="hdpi" src="res/icon/android/icon-72-hdpi-new.png" />
+    <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi-new.png" />
+    <splash density="land-hdpi" src="res/screen/android/screen-hdpi-landscape.png" />
+    <splash density="land-ldpi" src="res/screen/android/screen-ldpi-landscape.png" />
+    <splash density="land-mdpi" src="res/screen/android/screen-mdpi-landscape.png" />
+    <splash density="land-xhdpi" src="res/screen/android/screen-xhdpi-landscape.png" />
+    <splash density="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+    <splash density="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+    <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+    <splash density="port-xxhdpi" src="res/screen/android/screen-xxhdpi-portrait.png" />
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+        <application android:usesCleartextTraffic="true" />
+        <intent-filter android:autoVerify="true">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:host="onelink-basic-app.onelink.me" android:pathPrefix="/H5hv" android:scheme="https" />
+        </intent-filter>
+    </edit-config>
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="orientation" value="portrait" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="android-targetSdkVersion" value="30" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="scheme" value="http" />
+    <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <preference name="AndroidXEnabled" value="true" />
+</widget>

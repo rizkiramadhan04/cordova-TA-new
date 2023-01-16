@@ -1,0 +1,126 @@
+<script type="text/javascript" src="assets/js/edit-hafalan.js"></script>
+
+<div class="appHeader bg-primary">
+  <div class="left">
+    <a
+      href="javascript:void(0)"
+      onClick="pages('dashboard-guru')"
+      class="headerButton goBack"
+    >
+      <i style="font-size: 2rem" class="material-icons">chevron_left</i>
+    </a>
+  </div>
+  <div class="pageTitle">Edit Menyimak</div>
+  <div class="right"></div>
+</div>
+
+<!-- <div class="text-center">
+  <h6 class="my-5">Maaf halaman belum tersedia..!</h6>
+</div> -->
+
+<!-- list hadiah vouhcer -->
+
+<div class="section wallet-card-section pt-1 new-menu-content">
+  <div style="padding: 0 !important" class="wallet-card">
+    <div class="img-menu-content">
+      <img src="assets/img/hafalan/hafalan.jpg" />
+    </div>
+    <div class="text-content">
+      <div class="title">
+        <span>Kegiatan menghafal doa sehari-hari</span>
+      </div>
+      <div class="detail-text">
+        <ul style="padding: 2px 15px">
+          <li>
+            Kegiatan ini dilaksanakan pada setiap selesai mengaji Al quran dan
+            Iqra - TPA Al Muhibbin
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- list presensi -->
+<div id="sectionListContainer" class="section mt-4 mb-4">
+  <div class="section-heading">
+    <h2 class="title">Input hafalan</h2>
+  </div>
+  <div
+    id="pageListContainer"
+    class="transactions pageListContainerHafalan section wallet-card pt-3 pb-3"
+  >
+    <form method="POST" onsubmit="postData()">
+      <div class="form-group basic">
+        <div class="input-wrapper">
+          <label class="label" for="murid_id">Nama Murid</label>
+          <div class="row mt-1">
+            <div class="col-12">
+              <select class="form-control select2-basic" id="murid_id">
+                <option value="">-- Pilih Nama Murid --</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group basic">
+        <div class="input-wrapper">
+          <label class="label" for="jenis">Jenis Hafalan</label>
+          <div class="row mt-1">
+            <div class="col-12">
+              <select class="form-control select2-basic" id="jenis">
+                <option value="">-- Pilih Jenis Hafalan --</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group basic">
+        <div class="input-wrapper">
+          <label class="label" for="jenis">Materi Hafalan</label>
+          <div class="row mt-1">
+            <div class="col-12">
+              <select class="form-control select2-basic" id="materi_hafalan">
+                <option value="">-- Pilih Materi --</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group basic">
+        <div class="input-wrapper">
+          <label class="label" for="nilai">Nilai</label>
+          <input type="number" class="form-control mt-1" id="nilai" />
+        </div>
+      </div>
+
+      <div class="form-group basic">
+        <div class="input-wrapper">
+          <label class="label" for="tanggal_hafalan">Tanggal Hafalan</label>
+          <input type="date" class="form-control mt-1" id="tanggal_hafalan" />
+          <i class="clear-input" style="display: flex">
+            <i class="material-icons">date_range</i>
+          </i>
+        </div>
+      </div>
+
+      <div class="mt-2 mb-4 transparent">
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Simpan
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="mt-5 mb-4 transparent">
+    <a
+      href="javascript:void(0)"
+      onclick="pages('list-hafalan')"
+      class="btn btn-primary btn-block btn-lg"
+      >Lihat Data Menyimak</a
+    >
+  </div>
+</div>
+<!-- * list presensi -->

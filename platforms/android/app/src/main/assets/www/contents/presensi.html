@@ -1,0 +1,144 @@
+
+<script type="text/javascript" src="assets/js/html5-qrcode.min.js"></script>
+<script type="text/javascript" src="assets/js/presensi.js"></script>
+
+<div class="appHeader bg-primary">
+  <div class="left">
+    <a
+      href="javascript:void(0)"
+      onClick="pages('dashboard')"
+      class="headerButton goBack"
+    >
+      <i style="font-size: 2rem" class="material-icons">chevron_left</i>
+    </a>
+    <a
+      href="javascript:void(0)"
+      onClick="pages('dashboard-guru')"
+      class="headerButton goBack"
+      id="back-guru"
+    >
+      <i style="font-size: 2rem" class="material-icons">chevron_left</i>
+    </a>
+  </div>
+  <div class="pageTitle">Presensi</div>
+  <div class="right"></div>
+</div>
+
+<div id="containerPresensi" class="section wallet-card-section pt-1 text-center">
+  <div class="wallet-card pt-3 pb-3">
+      <h2>Presensi</h2>
+      <p>Silahkan scan QR-Code yang sudah disediakan untuk melakukan presensi</p>
+      <form id="formCekPresensi">
+          <div class="mt-2 transparent">
+              <div class="wallet-card" id="reader"></div>
+            <div style="padding:30px;">
+              <h4>SCAN RESULT</h4>
+              <div id="result">Result Here</div>
+            </div>
+          </div>
+              <!-- <div class="btn-group btn-block" role="group">
+                  <button id="result" class="btn btn-primary btn-lg">Scan QR-Code</button>
+                  <button id="result" class="btn btn-primary btn-lg"><i class="material-icons">flip</i></button>
+
+              </div> -->
+              <img class="mt-2" id="scaner_qr" src="assets/img/icon-add-image.png" width="98%" />
+              <input type="hidden" name="kode_jadwal_presensi" id="kode_jadwal_presensi" />
+          </div>
+
+          <div id="resultCheckPresensi" class="mt-2 transparent" style="display:none;">
+              <table id="tableCheckPresensi" style="text-align:left;font-weight:bold;color:black;display:none">
+                  <tr>
+                      <td>Nama</td>
+                      <td style="width:38px;text-align:center;">:</td>
+                      <td><span id="namePresensiUser"></span></td>
+                  </tr>
+                  <tr>
+                      <td>Waktu</td>
+                      <td style="width:38px;text-align:center;">:</td>
+                      <td><span id="timePresensiUser"></span></td>
+                  </tr>
+                  
+              </table>
+              <span id="failedPresensi" style="font-weight:bold;color:black;display:none"></span>
+          </div>
+              <div id="containerButtonUlangi" style="display:none;">
+                  <div class="row mt-2">
+                      <div class="col-6">
+                          <button onClick="ulangiPresensi()" class="btn btn-primary btn-block btn-lg"><i class="material-icons">refresh</i>&nbsp;Ulangi</button>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="containerButtonSubmitPresensi" style="display:none;">
+                  <div class="row">
+                      <div class="col-12">
+                          <button onClick="submitPresensi()" class="btn btn-primary btn-lg btn-block"><i class="material-icons">cloud_upload</i>&nbsp;Simpan Presensi</button>
+                      </div>
+                  </div>
+                  <div class="row mt-2">
+                      <div class="col-12">
+                          <button onClick="ulangiPresensi()" class="btn btn-outline-primary btn-block btn-lg"><i class="material-icons">refresh</i>&nbsp;Ulangi</button>
+                      </div>
+                  </div>
+
+              </div>
+              <a
+                href="javascript:void(0)"
+                onclick="pages('input-izin')"
+                class="btn btn-primary mt-3 w-50"
+                ><i class="material-icons">add</i>
+                 Izin
+              </a>
+          </div>
+
+      </form>
+      <div class="mt-5 mb-4 transparent">
+        <a href="#" onclick="pages('list-presensi')" class="btn btn-primary btn-block btn-lg">Lihat Data Presensi</a>
+      </div>
+  </div>
+
+<div
+  class="modal fade modal-detail-struk"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+  style="margin-top: 100px"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Modal title voucher
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center">
+        <div class="icon-close" id="icon-close">
+          <img src="assets/img/sample/home/icon-close.png" />
+        </div>
+        <div class="img-pesan" style="margin-bottom: 0">
+          <img id="img-struk" src="" style="width: 85% !important" />
+        </div>
+
+        <!-- <div class="btn-lihat-voucher">
+          <a href="javascript:void(0)" style="color: white"></a>
+        </div> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
