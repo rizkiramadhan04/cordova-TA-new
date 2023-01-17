@@ -1,10 +1,20 @@
 function onScanSuccess(qrCodeMessage) {
   document.getElementById("result").innerHTML =
     '<span class="result">' + qrCodeMessage + "</span>";
+
+  html5QrcodeScanner.clear();
+  // console.log("Hasil pembacaan QR : ", qrCodeMessage);
+
+  $("#formUploadKodeJadwal").val(qrCodeMessage);
+  window.localStorage.remove("kode_presensi");
+  window.localStorage.setItem("kode_presensi", qrCodeMessage);
 }
+
 function onScanError(errorMessage) {
+  '<span class="result">' + errorMessage + "</span>";
   //handle scan error
 }
+
 var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
   fps: 10,
   qrbox: 250,
@@ -15,6 +25,7 @@ var nama_user = window.localStorage.getItem("name");
 var status_user = window.localStorage.getItem("status_user");
 
 $(document).ready(function () {
+  console.log();
   if (status_user == "Guru") {
     $("#back-murid").hide();
     $("#back-guru").show();
@@ -23,91 +34,77 @@ $(document).ready(function () {
     $("#back-guru").hide();
   }
 
+  var date_time = moment().format("DD-MM-YYYY HH:mm:ss ");
+  console.log(moment());
+
   $("#nama_user_izin").val(nama_user);
+  $("#namePresensiUser").append(nama_user);
+  $("#timePresensiUser").append(date_time);
+
+  $("#formUploadTanggal").val(date_time);
 });
 
 var firstCon = firstConnection();
 
-function scan() {
-  console.log("scann");
+function uploadPresensi() {
+  data = {
+    tanggal_masuk: $("#formUploadTanggal").val(),
+    kode_jadwal_presensi: $("#formUploadKodeJadwal").val(),
+  };
 
-  cordova.plugins.barcodeScanner.scan(
-    function (result) {
-      console.log(result);
-      if (!result.cancelled) {
-        if (result.format == "QR_CODE") {
-          var value = result.text;
-          alert("We got a barcode\n" + "Result: " + value);
+  $.ajax({
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader(
+        "Authorization",
+        "Bearer " + window.localStorage.getItem("access_token")
+      );
+      xhr.setRequestHeader("Accept", "application/json");
+    },
+
+    url: conn + "/input-data-presensi",
+    type: "POST",
+    dataType: "json",
+    data: data,
+    timeout: timeout,
+  })
+    .done(function (values) {
+      console.log(values);
+      navigator.notification.alert(
+        values.message,
+        alertDismissed,
+        TITLE_ALERT,
+        "Ok"
+      );
+
+      pages("list-presensi");
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+      if (jqXHR.readyState == 0) {
+        console.log(
+          "Network error (i.e. connection refused, access denied due to CORS, etc.)"
+        );
+        navigator.notification.alert(
+          "Koneksi offline - Cek koneksi internet Anda.  ",
+          alertDismissed,
+          TITLE_ALERT,
+          "Ok"
+        );
+      } else {
+        SpinnerDialog.hide();
+        if (textStatus == "timeout") {
+          navigator.notification.alert(
+            "Koneksi Time Out - Cek koneksi internet Anda.",
+            alertDismissed,
+            TITLE_ALERT,
+            "Ok"
+          );
         }
       }
-    },
-    function (error) {
-      alert("Scanning failed: " + error);
-    }
-  );
-
-  pages("presensi");
+    });
 }
-
-// function clickDetailstruk(param) {
-//   data = {
-//     id_receipt: $(param).data("id"),
-//   };
-
-//   $.ajax({
-//     beforeSend: function (xhr) {
-//       xhr.setRequestHeader(
-//         "Authorization",
-//         "Bearer " + window.localStorage.getItem("access_token")
-//       );
-//       xhr.setRequestHeader("Accept", "application/json");
-//     },
-
-//     url: conn + "/detail-receipt",
-//     type: "POST",
-//     dataType: "json",
-//     data: data,
-//     timeout: timeout,
-//   })
-//     .done(function (values) {
-//       // console.log(values);
-//       $("#img-struk").attr(
-//         "src",
-//         server_url + "/storage/receipt/" + values.image
-//       );
-//     })
-//     .fail(function (jqXHR, textStatus, errorThrown) {
-//       console.log(jqXHR);
-//       console.log(textStatus);
-//       console.log(errorThrown);
-//       if (jqXHR.readyState == 0) {
-//         console.log(
-//           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
-//         );
-//         navigator.notification.alert(
-//           "Koneksi offline - Cek koneksi internet Anda.  ",
-//           alertDismissed,
-//           TITLE_ALERT,
-//           "Ok"
-//         );
-//       } else {
-//         SpinnerDialog.hide();
-//         if (textStatus == "timeout") {
-//           navigator.notification.alert(
-//             "Koneksi Time Out - Cek koneksi internet Anda.",
-//             alertDismissed,
-//             TITLE_ALERT,
-//             "Ok"
-//           );
-//         }
-//       }
-//     });
-
-//   $(".modal-detail-struk").modal("show");
-//   $(".icon-close").click(() => {
-//     $(".modal-detail-struk").modal("hide");
-//   });
-// }
 
 var firstCon = firstConnection();
 var status_presensi = window.localStorage.getItem("status_presensi");

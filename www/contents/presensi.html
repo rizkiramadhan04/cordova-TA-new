@@ -1,6 +1,7 @@
 
 <script type="text/javascript" src="assets/js/html5-qrcode.min.js"></script>
 <script type="text/javascript" src="assets/js/presensi.js"></script>
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
 
 <div class="appHeader bg-primary">
   <div class="left">
@@ -45,15 +46,15 @@
               <input type="hidden" name="kode_jadwal_presensi" id="kode_jadwal_presensi" />
           </div>
 
-          <div id="resultCheckPresensi" class="mt-2 transparent" style="display:none;">
-              <table id="tableCheckPresensi" style="text-align:left;font-weight:bold;color:black;display:none">
+          <div id="resultCheckPresensi" class="mt-2 transparent">
+              <table id="tableCheckPresensi" style="text-align:left;font-weight:bold;color:black;">
                   <tr>
                       <td>Nama</td>
                       <td style="width:38px;text-align:center;">:</td>
                       <td><span id="namePresensiUser"></span></td>
                   </tr>
                   <tr>
-                      <td>Waktu</td>
+                      <td>Tanggal</td>
                       <td style="width:38px;text-align:center;">:</td>
                       <td><span id="timePresensiUser"></span></td>
                   </tr>
@@ -69,10 +70,10 @@
                   </div>
               </div>
 
-              <div id="containerButtonSubmitPresensi" style="display:none;">
+              <div id="containerButtonSubmitPresensi">
                   <div class="row">
                       <div class="col-12">
-                          <button onClick="submitPresensi()" class="btn btn-primary btn-lg btn-block"><i class="material-icons">cloud_upload</i>&nbsp;Simpan Presensi</button>
+                          <button onClick="uploadPresensi()" class="btn btn-primary btn-lg btn-block"><i class="material-icons">cloud_upload</i>&nbsp;Simpan Presensi</button>
                       </div>
                   </div>
                   <div class="row mt-2">
@@ -92,6 +93,11 @@
           </div>
 
       </form>
+      <form id="formUploadPresensi" >
+            <input type="hidden" id="formUploadName" name="formUploadName">
+            <input type="hidden" id="formUploadTanggal" name="formUploadTanggal">
+            <input type="hidden" id="formUploadKodeJadwal" name="formUploadKodeJadwal">
+        </form>
       <div class="mt-5 mb-4 transparent">
         <a href="#" onclick="pages('list-presensi')" class="btn btn-primary btn-block btn-lg">Lihat Data Presensi</a>
       </div>
