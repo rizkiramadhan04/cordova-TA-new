@@ -32,22 +32,33 @@
       <form id="formCekPresensi">
           <div class="mt-2 transparent">
               <div class="wallet-card" id="reader"></div>
-            <div style="padding:30px;">
-              <h4>SCAN RESULT</h4>
-              <div id="result">Result Here</div>
-            </div>
           </div>
               <!-- <div class="btn-group btn-block" role="group">
                   <button id="result" class="btn btn-primary btn-lg">Scan QR-Code</button>
                   <button id="result" class="btn btn-primary btn-lg"><i class="material-icons">flip</i></button>
 
               </div> -->
-              <img class="mt-2" id="scaner_qr" src="assets/img/icon-add-image.png" width="98%" />
-              <input type="hidden" name="kode_jadwal_presensi" id="kode_jadwal_presensi" />
-          </div>
 
-          <div id="resultCheckPresensi" class="mt-2 transparent">
+              <div class="mt-1 mb-1">
+
+                <a
+                href="javascript:void(0)"
+                onclick="pages('input-izin')"
+                class="btn btn-primary mt-3 w-50"
+                ><i class="material-icons">add</i>
+                 Izin
+              </a>
+
+              </div>
+
+              <div id="resultCheckPresensi" class="mt-2 transparent">
+                <hr />
               <table id="tableCheckPresensi" style="text-align:left;font-weight:bold;color:black;">
+                  <tr>
+                      <td>Kode Presensi</td>
+                      <td style="width:38px;text-align:center;">:</td>
+                      <td><span id="kode_presensi" style="color: aquamarine;">Kode Terbaca</span></td>
+                  </tr>
                   <tr>
                       <td>Nama</td>
                       <td style="width:38px;text-align:center;">:</td>
@@ -60,47 +71,34 @@
                   </tr>
                   
               </table>
+               <hr />
               <span id="failedPresensi" style="font-weight:bold;color:black;display:none"></span>
           </div>
-              <div id="containerButtonUlangi" style="display:none;">
-                  <div class="row mt-2">
-                      <div class="col-6">
-                          <button onClick="ulangiPresensi()" class="btn btn-primary btn-block btn-lg"><i class="material-icons">refresh</i>&nbsp;Ulangi</button>
-                      </div>
-                  </div>
-              </div>
-
+              <img class="mt-2" id="scaner_qr" src="assets/img/icon-add-image.png" width="98%" />
+          </div>
               <div id="containerButtonSubmitPresensi">
-                  <div class="row">
+                  <div class="row mt-3">
                       <div class="col-12">
                           <button onClick="uploadPresensi()" class="btn btn-primary btn-lg btn-block"><i class="material-icons">cloud_upload</i>&nbsp;Simpan Presensi</button>
                       </div>
                   </div>
                   <div class="row mt-2">
                       <div class="col-12">
-                          <button onClick="ulangiPresensi()" class="btn btn-outline-primary btn-block btn-lg"><i class="material-icons">refresh</i>&nbsp;Ulangi</button>
+                          <div class="mt-5 mb-4 transparent">
+                            <a href="#" onclick="pages('list-presensi')" class="btn btn-primary btn-block btn-lg">Lihat Data Presensi</a>
+                          </div>
                       </div>
                   </div>
 
               </div>
-              <a
-                href="javascript:void(0)"
-                onclick="pages('input-izin')"
-                class="btn btn-primary mt-3 w-50"
-                ><i class="material-icons">add</i>
-                 Izin
-              </a>
           </div>
 
       </form>
       <form id="formUploadPresensi" >
-            <input type="hidden" id="formUploadName" name="formUploadName">
-            <input type="hidden" id="formUploadTanggal" name="formUploadTanggal">
-            <input type="hidden" id="formUploadKodeJadwal" name="formUploadKodeJadwal">
-        </form>
-      <div class="mt-5 mb-4 transparent">
-        <a href="#" onclick="pages('list-presensi')" class="btn btn-primary btn-block btn-lg">Lihat Data Presensi</a>
-      </div>
+          <input type="hidden" id="formUploadName" name="formUploadName">
+          <input type="hidden" id="formUploadTanggal" name="formUploadTanggal">
+          <input type="hidden" id="formUploadKodeJadwal" name="formUploadKodeJadwal">
+      </form>
   </div>
 
 <div

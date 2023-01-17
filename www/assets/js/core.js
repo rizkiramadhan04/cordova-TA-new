@@ -29,10 +29,6 @@ String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-//https://trial.nadyne.com:10381/mobil-indostation
-//https://mobil-indostation.co.id
-//http://103.111.186.84/
-
 var server_url = "https://tpa-almuhibbin.com/public";
 var conn = server_url + "/api";
 var timeout = 50000; // 40 second, global
@@ -92,10 +88,6 @@ function onBackKeyDown(e) {
     }
   }
 }
-
-// $(window).bind('beforeunload', function() {
-//     console.log('beforeunload');
-// });
 
 function alertDismissed() {
   // do nothing
@@ -168,137 +160,137 @@ var callbackActionSheet = function (tipe_foto, buttonIndex) {
   });
 };
 
-var callbackActionSheet2 = function (tipe_foto, buttonIndex) {
-  // event.preventDefault();
-  setTimeout(function () {
-    // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
-    //console.log('button index: ' + buttonIndex);
-    //console.log('tipe foto: ' + tipe_foto);
+// var callbackActionSheet2 = function (tipe_foto, buttonIndex) {
+//   // event.preventDefault();
+//   setTimeout(function () {
+//     // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
+//     //console.log('button index: ' + buttonIndex);
+//     //console.log('tipe foto: ' + tipe_foto);
 
-    var opsi;
-    if (buttonIndex == "1") {
-      opsi = optionsCamera();
-    } else if (buttonIndex == "2") {
-      opsi = optionsGallery();
-    }
-    navigator.camera.getPicture(
-      function cameraSuccess(imageUri) {
-        //console.log(imageUri);
-        //console.log(tipe_foto);
-        window.localStorage.removeItem("camera_active_sess");
-        var foto = "data:image/jpeg;base64," + imageUri;
+//     var opsi;
+//     if (buttonIndex == "1") {
+//       opsi = optionsCamera();
+//     } else if (buttonIndex == "2") {
+//       opsi = optionsGallery();
+//     }
+//     navigator.camera.getPicture(
+//       function cameraSuccess(imageUri) {
+//         //console.log(imageUri);
+//         //console.log(tipe_foto);
+//         window.localStorage.removeItem("camera_active_sess");
+//         var foto = "data:image/jpeg;base64," + imageUri;
 
-        $("#real_foto_" + tipe_foto).attr("src", foto);
-        // $("#real_foto_" + tipe_foto + " img").fakecrop({
-        //     wrapperWidth: 90,
-        //     wrapperHeight: 82
-        // });
-        $("#foto_text_" + tipe_foto).val(foto);
+//         $("#real_foto_" + tipe_foto).attr("src", foto);
+//         // $("#real_foto_" + tipe_foto + " img").fakecrop({
+//         //     wrapperWidth: 90,
+//         //     wrapperHeight: 82
+//         // });
+//         $("#foto_text_" + tipe_foto).val(foto);
 
-        data = {
-          photo: foto,
-        };
+//         data = {
+//           photo: foto,
+//         };
 
-        $.ajax({
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader(
-              "Authorization",
-              "Bearer " + window.localStorage.getItem("access_token")
-            );
-            xhr.setRequestHeader("Accept", "application/json");
-          },
-          type: "POST",
-          url: conn + "/upload-photo",
-          dataType: "json",
-          timeout: timeout,
-          data: data,
-        })
-          .done(function (values) {
-            if (values.status == "success") {
-              navigator.notification.alert(
-                "Foto berhasil diupdate",
-                alertDismissed,
-                TITLE_ALERT,
-                "Ok"
-              );
-              SpinnerDialog.hide();
-              // pages('profil');
-            } else {
-              navigator.notification.alert(
-                values.message,
-                alertDismissed,
-                TITLE_ALERT,
-                "Ok"
-              );
-              SpinnerDialog.hide();
-            }
-          })
-          .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+//         $.ajax({
+//           beforeSend: function (xhr) {
+//             xhr.setRequestHeader(
+//               "Authorization",
+//               "Bearer " + window.localStorage.getItem("access_token")
+//             );
+//             xhr.setRequestHeader("Accept", "application/json");
+//           },
+//           type: "POST",
+//           url: conn + "/upload-photo",
+//           dataType: "json",
+//           timeout: timeout,
+//           data: data,
+//         })
+//           .done(function (values) {
+//             if (values.status == "success") {
+//               navigator.notification.alert(
+//                 "Foto berhasil diupdate",
+//                 alertDismissed,
+//                 TITLE_ALERT,
+//                 "Ok"
+//               );
+//               SpinnerDialog.hide();
+//               // pages('profil');
+//             } else {
+//               navigator.notification.alert(
+//                 values.message,
+//                 alertDismissed,
+//                 TITLE_ALERT,
+//                 "Ok"
+//               );
+//               SpinnerDialog.hide();
+//             }
+//           })
+//           .fail(function (jqXHR, textStatus, errorThrown) {
+//             console.log(jqXHR);
+//             console.log(textStatus);
+//             console.log(errorThrown);
 
-            if (jqXHR.readyState == 0) {
-              console.log(
-                "Network error (i.e. connection refused, access denied due to CORS, etc.)"
-              );
-              navigator.notification.alert(
-                "Koneksi offline. Silahkan hubungi Call Center : Kode #DB-001",
-                alertDismissed,
-                TITLE_ALERT,
-                "Ok"
-              );
-            } else {
-              SpinnerDialog.hide();
-              if (textStatus == "timeout") {
-                navigator.notification.alert(
-                  "Koneksi Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
-                  alertDismissed,
-                  TITLE_ALERT,
-                  "Ok"
-                );
-              }
-            }
-          });
-      },
-      function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
-        window.localStorage.removeItem("camera_active_sess");
-      },
-      opsi
-    );
-  });
-};
+//             if (jqXHR.readyState == 0) {
+//               console.log(
+//                 "Network error (i.e. connection refused, access denied due to CORS, etc.)"
+//               );
+//               navigator.notification.alert(
+//                 "Koneksi offline. Silahkan hubungi Call Center : Kode #DB-001",
+//                 alertDismissed,
+//                 TITLE_ALERT,
+//                 "Ok"
+//               );
+//             } else {
+//               SpinnerDialog.hide();
+//               if (textStatus == "timeout") {
+//                 navigator.notification.alert(
+//                   "Koneksi Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+//                   alertDismissed,
+//                   TITLE_ALERT,
+//                   "Ok"
+//                 );
+//               }
+//             }
+//           });
+//       },
+//       function cameraError(error) {
+//         console.debug("Unable to obtain picture: " + error, "app");
+//         window.localStorage.removeItem("camera_active_sess");
+//       },
+//       opsi
+//     );
+//   });
+// };
 
-function fotoActionSheet(tipe_foto) {
-  window.localStorage.setItem("camera_active_sess", "1");
-  var options = {
-    androidTheme:
-      window.plugins.actionsheet.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT, // default is THEME_TRADITIONAL
-    title: "Ambil Foto",
-    subtitle: "Ambil foto dari kamera atau dari gallery", // supported on iOS only
-    buttonLabels: ["Kamera", "Gallery"],
-    androidEnableCancelButton: true, // default false
-    winphoneEnableCancelButton: true, // default false
-    addCancelButtonWithLabel: "Batal",
-    position: [20, 40], // for iPad pass in the [x, y] position of the popover
-    destructiveButtonLast: true, // you can choose where the destructive button is shown
-  };
-  // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
-  // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
-  if (tipe_foto == "foto_user") {
-    window.plugins.actionsheet.show(
-      options,
-      callbackActionSheet2.bind(this, tipe_foto)
-    );
-  } else {
-    window.plugins.actionsheet.show(
-      options,
-      callbackActionSheet.bind(this, tipe_foto)
-    );
-  }
-  // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
-}
+// function fotoActionSheet(tipe_foto) {
+//   window.localStorage.setItem("camera_active_sess", "1");
+//   var options = {
+//     androidTheme:
+//       window.plugins.actionsheet.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT, // default is THEME_TRADITIONAL
+//     title: "Ambil Foto",
+//     subtitle: "Ambil foto dari kamera atau dari gallery", // supported on iOS only
+//     buttonLabels: ["Kamera", "Gallery"],
+//     androidEnableCancelButton: true, // default false
+//     winphoneEnableCancelButton: true, // default false
+//     addCancelButtonWithLabel: "Batal",
+//     position: [20, 40], // for iPad pass in the [x, y] position of the popover
+//     destructiveButtonLast: true, // you can choose where the destructive button is shown
+//   };
+//   // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
+//   // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
+//   if (tipe_foto == "foto_user") {
+//     window.plugins.actionsheet.show(
+//       options,
+//       callbackActionSheet2.bind(this, tipe_foto)
+//     );
+//   } else {
+//     window.plugins.actionsheet.show(
+//       options,
+//       callbackActionSheet.bind(this, tipe_foto)
+//     );
+//   }
+//   // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
+// }
 
 function onOffline() {
   console.log("offline");
@@ -388,35 +380,6 @@ function onDeviceReady() {
   );
 
   console.log("Device Ready");
-  var optionAccuracy = {};
-  //cordova.plugins.locationAccuracy.request(successCallbackLocAccuracy, errorCallbackLocAccuracy)
-  //navigator.splashscreen.show();
-
-  pictureSource = navigator.camera.PictureSourceType;
-  destinationType = navigator.camera.DestinationType;
-
-  // init database
-  var databaseName = "Mobil Indostation";
-  var databaseVersion = "1.0";
-  var databaseDisplayName = "Mobil Indostation";
-  var databaseSize = 15 * 1024 * 1024;
-
-  // Accessing with HTML5 local database
-  myDB = window.openDatabase(
-    databaseName,
-    databaseVersion,
-    databaseDisplayName,
-    databaseSize
-  );
-
-  //tes
-  myDB.transaction(function (transaction) {
-    database("customer_local", transaction);
-    database("customer_server", transaction);
-    database("outlet", transaction);
-    database("product", transaction);
-    database("city_local", transaction);
-  });
 
   window.plugins.OnDestroyPlugin.setEventListener(function () {
     //console.log('ondestroy');
@@ -434,8 +397,6 @@ function onDeviceReady() {
 
   // console.log(versionDevice);
   window.localStorage.setItem("versionDevice", versionDevice);
-  window.localStorage.removeItem("province_id");
-  window.localStorage.removeItem("countvcr");
   checkLogin();
 } //end onDeviceReady
 
@@ -536,23 +497,6 @@ function database(item, transaction) {
         }
       );
       break;
-
-    case "city_local":
-      transaction.executeSql(
-        "CREATE TABLE IF NOT EXISTS city_local (id INTEGER PRIMARY KEY, parent_id INTEGER(11), " +
-          "name VARCHAR(255), latitude VARCHAR(20), longitude VARCHAR(20))",
-        [],
-        function (tx, result) {
-          // console.log("Table city_local created successfully.");
-        },
-        function (error, e) {
-          console.log(
-            "Error occurred while creating the table customer_server."
-          );
-          console.log("Error : " + e.message);
-        }
-      );
-      break;
   }
 } //end function database
 
@@ -570,11 +514,6 @@ function insertQuery(item) {
       query =
         "INSERT OR REPLACE INTO customer_server (id_server, name, no_hp, email, status, product_id, device_uuid, data_type, " +
         "photo_id_card, photo_invoice, photo_customer, time_created)";
-      break;
-
-    case "city_local":
-      query =
-        "INSERT OR REPLACE INTO city_local (id, parent_id, name, latitude, longitude)";
       break;
 
     default:
@@ -1029,6 +968,7 @@ function logout(logout_type) {
         window.localStorage.removeItem("register_user_id_sess");
         window.localStorage.removeItem("status_presensi");
         window.localStorage.removeItem("status_user");
+        window.localStorage.removeItem("kode_presensi");
 
         $(document.body).removeClass("modal-open");
         $("#sidebarPanel").modal("hide");
