@@ -1,19 +1,28 @@
-$("#tableCheckPresensi").hide();
+$("#resultCheckPresensi").hide();
+$("#scanner-reader-content").hide();
+
+function openScanner() {
+  $("#scanner-reader-content").show();
+  $("#containerButtonOpen").hide();
+}
+
+// console.log(openScanner());
 
 function onScanSuccess(qrCodeMessage) {
-  $("#tableCheckPresensi").show();
+  $("#resultCheckPresensi").show();
+  $("#containerButtonOpen").hide();
 
   html5QrcodeScanner.clear();
   // console.log("Hasil pembacaan QR : ", qrCodeMessage);
 
   $("#formUploadKodeJadwal").val(qrCodeMessage);
-  window.localStorage.remove("kode_presensi");
-  window.localStorage.setItem("kode_presensi", qrCodeMessage);
 }
 
 function onScanError(errorMessage) {
+  console.log("Pesan error Scan :", errorMessage);
   '<span class="result">' + errorMessage + "</span>";
-  $("#tableCheckPresensi").show();
+  $("#resultCheckPresensi").hide();
+  $("#containerButtonOpen").show();
   //handle scan error
 }
 
@@ -70,8 +79,9 @@ function uploadPresensi() {
     timeout: timeout,
   })
     .done(function (values) {
-      console.log(values);
       if (values.status == "failed") {
+        console.log("Status : ", values.status == "failed");
+        console.log("Status user : ", status_user);
         if (status_user == "Murid") {
           pages("presensi");
 
@@ -97,9 +107,8 @@ function uploadPresensi() {
           TITLE_ALERT,
           "Ok"
         );
+        pages("list-presensi");
       }
-
-      pages("list-presensi");
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       console.log(jqXHR);

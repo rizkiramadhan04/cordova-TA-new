@@ -30,14 +30,16 @@
       <h2>Presensi</h2>
       <p>Silahkan scan QR-Code yang sudah disediakan untuk melakukan presensi</p>
       <form id="formCekPresensi">
-          <div class="mt-2 transparent">
+
+        <div id="containerButtonOpen" class="btn-group btn-block" role="group">
+            <a href="javascript:void(0)" onclick="openScanner()" class="btn btn-primary btn-lg">Scan QR-Code</a>
+            <a href="javascript:void(0)" onclick="openScanner()" class="btn btn-primary btn-lg"><i class="material-icons">flip</i></a>
+
+        </div>
+
+          <div class="mt-2 transparent" id="scanner-reader-content">
               <div class="wallet-card" id="reader"></div>
           </div>
-              <!-- <div class="btn-group btn-block" role="group">
-                  <button id="result" class="btn btn-primary btn-lg">Scan QR-Code</button>
-                  <button id="result" class="btn btn-primary btn-lg"><i class="material-icons">flip</i></button>
-
-              </div> -->
 
               <div class="mt-1 mb-1">
 
