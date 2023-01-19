@@ -2,6 +2,14 @@ var firstCon = firstConnection();
 var status_presensi = window.localStorage.getItem("status_presensi");
 var status_user = window.localStorage.getItem("status_user");
 
+if (status_user == "Guru") {
+  $("#back-murid").hide();
+  $("#back-guru").show();
+} else {
+  $("#back-murid").show();
+  $("#back-guru").hide();
+}
+
 if (status_presensi == 0) {
   $("#img-ceklis-all").css("display", "none");
   $("#img-ceklis-izin").css("display", "none");

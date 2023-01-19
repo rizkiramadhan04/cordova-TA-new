@@ -103,7 +103,7 @@ if (firstCon == "online") {
             "Network error (i.e. connection refused, access denied due to CORS, etc.)"
           );
           navigator.notification.alert(
-            "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+            "Koneksi offline - Cek koneksi internet Anda.",
             alertDismissed,
             TITLE_ALERT,
             "Ok"
@@ -111,7 +111,7 @@ if (firstCon == "online") {
         } else {
           if (textStatus == "timeout") {
             navigator.notification.alert(
-              "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+              "Request Time Out - Cek koneksi internet Anda.",
               alertDismissed,
               TITLE_ALERT,
               "Ok"
@@ -208,7 +208,7 @@ if (firstCon == "online") {
             "Network error (i.e. connection refused, access denied due to CORS, etc.)"
           );
           navigator.notification.alert(
-            "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+            "Koneksi offline - Cek koneksi internet Anda.",
             alertDismissed,
             TITLE_ALERT,
             "Ok"
@@ -216,7 +216,7 @@ if (firstCon == "online") {
         } else {
           if (textStatus == "timeout") {
             navigator.notification.alert(
-              "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+              "Request Time Out - Cek koneksi internet Anda.",
               alertDismissed,
               TITLE_ALERT,
               "Ok"
@@ -228,7 +228,7 @@ if (firstCon == "online") {
 } else {
   SpinnerDialog.hide();
   navigator.notification.alert(
-    "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+    "Koneksi offline - Cek koneksi internet Anda.",
     alertDismissed,
     TITLE_ALERT,
     "Ok"
@@ -252,7 +252,7 @@ function confirm(param) {
   }
 
   navigator.notification.confirm(
-    "Anda ingin menghapus voucher ini!", // message
+    "Anda ingin menghapus data mengajar ini!", // message
     onConfirm, // callback to invoke with index of button pressed
     TITLE_ALERT, // title
     ["Oke", "Tidak"] // buttonLabels
@@ -297,7 +297,7 @@ function deleteCatatan(pencatatan_id) {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda.",
           alertDismissed,
           TITLE_ALERT,
           "Ok"

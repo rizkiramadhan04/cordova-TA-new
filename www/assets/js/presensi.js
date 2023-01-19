@@ -36,7 +36,7 @@ var nama_user = window.localStorage.getItem("name");
 var status_user = window.localStorage.getItem("status_user");
 
 $(document).ready(function () {
-  console.log();
+  // console.log();
   if (status_user == "Guru") {
     $("#back-murid").hide();
     $("#back-guru").show();
@@ -46,7 +46,7 @@ $(document).ready(function () {
   }
 
   var date_time = moment().format("DD-MM-YYYY HH:mm:ss ");
-  console.log(moment());
+  // console.log(moment());
 
   $("#nama_user_izin").val(nama_user);
   $("#namePresensiUser").append(nama_user);

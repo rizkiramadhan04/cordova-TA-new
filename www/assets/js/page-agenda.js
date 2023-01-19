@@ -100,7 +100,7 @@ if (firstCon == "online") {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda. ",
           alertDismissed,
           TITLE_ALERT,
           "Ok"
@@ -108,7 +108,7 @@ if (firstCon == "online") {
       } else {
         if (textStatus == "timeout") {
           navigator.notification.alert(
-            "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+            "Request Time Out - Cek koneksi internet Anda. ",
             alertDismissed,
             TITLE_ALERT,
             "Ok"
@@ -119,7 +119,7 @@ if (firstCon == "online") {
 } else {
   SpinnerDialog.hide();
   navigator.notification.alert(
-    "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+    "Koneksi offline - Cek koneksi internet Anda. ",
     alertDismissed,
     TITLE_ALERT,
     "Ok"
@@ -220,7 +220,7 @@ $(".load-more-news").click(function () {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda. ",
           alertDismissed,
           TITLE_ALERT,
           "Ok"
@@ -228,7 +228,7 @@ $(".load-more-news").click(function () {
       } else {
         if (textStatus == "timeout") {
           navigator.notification.alert(
-            "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+            "Request Time Out - Cek koneksi internet Anda. ",
             alertDismissed,
             TITLE_ALERT,
             "Ok"
@@ -324,7 +324,7 @@ function cariBerita() {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda. ",
           alertDismissed,
           TITLE_ALERT,
           "Ok"
@@ -332,7 +332,7 @@ function cariBerita() {
       } else {
         if (textStatus == "timeout") {
           navigator.notification.alert(
-            "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+            "Request Time Out - Cek koneksi internet Anda. ",
             alertDismissed,
             TITLE_ALERT,
             "Ok"

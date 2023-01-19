@@ -25,7 +25,7 @@ if (firstCon == "online") {
   })
     .done(function (values) {
       var results = values.data;
-      console.log(results);
+      console.log(values.status);
 
       window.localStorage.removeItem("materi_hafalan");
       window.localStorage.setItem("materi_hafalan", results.materi_hafalan);
@@ -141,121 +141,124 @@ if (firstCon == "online") {
 
   //get data murid
 
-  var list_type = "";
-  var jenis_hafalan = window.localStorage.getItem("jenis_hafalan");
-  if (jenis_hafalan != null) {
-    list_type =
-      '<option value="1" ' +
-      (jenis_hafalan == 1 ? "selected" : "") +
-      ">Bacaan Sholat</option>" +
-      '<option value="2" ' +
-      (jenis_hafalan == 2 ? "selected" : "") +
-      ">Doa Sehari-hari</option>";
-  } else {
-    list_type =
-      '<option value="1">Bacaan Sholat</option>' +
-      '<option value="2">Doa Sehari-hari</option>';
-  }
+  $(document).ready(function () {
+    var list_type = "";
+    var jenis_hafalan = window.localStorage.getItem("jenis_hafalan");
+    // console.log(jenis_hafalan);
+    if (jenis_hafalan != null) {
+      list_type =
+        '<option value="1" ' +
+        (jenis_hafalan == 1 ? "selected" : "") +
+        ">Bacaan Sholat</option>" +
+        '<option value="2" ' +
+        (jenis_hafalan == 2 ? "selected" : "") +
+        ">Doa Sehari-hari</option>";
+    } else {
+      list_type =
+        '<option value="1">Bacaan Sholat</option>' +
+        '<option value="2">Doa Sehari-hari</option>';
+    }
 
-  $("#jenis").append(list_type);
+    $("#jenis").append(list_type);
 
-  var list_materi = "";
-  var materi = window.localStorage.getItem("materi_hafalan");
-  if (materi != null) {
-    list_materi =
-      "<option " +
-      (materi == "Doa Iftitah" ? "selected" : "") +
-      ' value="Doa Iftitah">Doa Iftitah</option>' +
-      "<option " +
-      (materi == "Surah Al - Fatihah" ? "selected" : "") +
-      ' value="Surah Al - Fatihah">Surah Al - Fatihah</option>' +
-      "<option " +
-      (materi == "Doa Ruku & Itidal" ? "selected" : "") +
-      ' value="Doa Ruku & Itidal">Doa Ruku & Itidal</option>' +
-      "<option " +
-      (materi == "Doa Sujud" ? "selected" : "") +
-      ' value="Doa Sujud">Doa Sujud</option>' +
-      "<option " +
-      (materi == "Doa Duduk iftirasy" ? "selected" : "") +
-      ' value="Doa Duduk iftirasy">Doa Duduk iftirasy</option>' +
-      "<option " +
-      (materi == "Doa Tasyahud" ? "selected" : "") +
-      ' value="Doa Tasyahud">Doa Tasyahud</option>' +
-      "<option " +
-      (materi == "Dzikir Bada Sholat" ? "selected" : "") +
-      ' value="Dzikir Bada Sholat">Dzikir Bada Sholat</option>' +
-      "<option " +
-      (materi == "Doa Kebaikan" ? "selected" : "") +
-      ' value="Doa Kebaikan">Doa Kebaikan Dunia & Akhirat</option>' +
-      "<option " +
-      (materi == "Doa Sebelum Makan" ? "selected" : "") +
-      ' value="Doa Sebelum Makan">Doa Sebelum Makan</option>' +
-      "<option " +
-      (materi == "Doa Setelah Makan" ? "selected" : "") +
-      ' value="Doa Setelah Makan">Doa Setelah Makan</option>' +
-      "<option " +
-      (materi == "Doa Sebelum Tidur" ? "selected" : "") +
-      ' value="Doa Sebelum Tidur">Doa Sebelum Tidur</option>' +
-      "<option " +
-      (materi == "Doa Bangun Tidur" ? "selected" : "") +
-      ' value="Doa Bangun Tidur">Doa Bangun Tidur</option>' +
-      "<option " +
-      (materi == "Doa Masuk Rumah" ? "selected" : "") +
-      ' value="Doa Masuk Rumah">Doa Masuk Rumah</option>' +
-      "<option " +
-      (materi == "Doa Keluar Rumah" ? "selected" : "") +
-      ' value="Doa Keluar Rumah">Doa Keluar Rumah</option>' +
-      "<option " +
-      (materi == "Doa Masuk WC" ? "selected" : "") +
-      ' value="Doa Masuk WC">Doa Masuk WC</option>' +
-      "<option " +
-      (materi == "Doa Keluar WC" ? "selected" : "") +
-      ' value="Doa Keluar WC">Doa Keluar WC</option>' +
-      "<option " +
-      (materi == "Doa Setelah Adzan" ? "selected" : "") +
-      ' value="Doa Setelah Adzan">Doa Setelah Adzan</option>' +
-      "<option " +
-      (materi == "Doa Setelah Iqomah" ? "selected" : "") +
-      ' value="Doa Setelah Iqomah">Doa Setelah Iqomah</option>' +
-      "<option " +
-      (materi == "Doa Selesai Wudhu" ? "selected" : "") +
-      ' value="Doa Selesai Wudhu">Doa Selesai Wudhu</option>' +
-      "<option " +
-      (materi == "Doa Bercermin" ? "selected" : "") +
-      ' value="Doa Bercermin">Doa Bercermin</option>' +
-      "<option " +
-      (materi == "Doa Untuk Orang Tua" ? "selected" : "") +
-      ' value="Doa Untuk Orang Tua">Doa Untuk Orang Tua</option>' +
-      "<option " +
-      (materi == "Doa Qunut" ? "selected" : "") +
-      ' value="Doa Qunut">Doa Qunut</option>';
-  } else {
-    list_materi =
-      '<option value="Doa Iftitah">Doa Iftitah</option>' +
-      '<option value="Surah Al - Fatihah">Surah Al - Fatihah</option>' +
-      '<option value="Doa Ruku & Itidal">Doa Ruku & Itidal</option>' +
-      '<option value="Doa Sujud">Doa Sujud</option>' +
-      '<option value="Doa Duduk iftirasy">Doa Duduk iftirasy</option>' +
-      '<option value="Doa Tasyahud">Doa Tasyahud</option>' +
-      '<option value="Dzikir Bada Sholat">Dzikir Bada Sholat</option>' +
-      '<option value="Doa Kebaikan">Doa Kebaikan Dunia & Akhirat</option>' +
-      '<option value="Doa Sebelum Makan">Doa Sebelum Makan</option>' +
-      '<option value="Doa Setelah Makan">Doa Setelah Makan</option>' +
-      '<option value="Doa Sebelum Tidur">Doa Sebelum Tidur</option>' +
-      '<option value="Doa Bangun Tidur">Doa Bangun Tidur</option>' +
-      '<option value="Doa Masuk Rumah">Doa Masuk Rumah</option>' +
-      '<option value="Doa Keluar Rumah">Doa Keluar Rumah</option>' +
-      '<option value="Doa Masuk WC">Doa Masuk WC</option>' +
-      '<option value="Doa Keluar WC">Doa Keluar WC</option>' +
-      '<option value="Doa Setelah Adzan">Doa Setelah Adzan</option>' +
-      '<option value="Doa Setelah Iqomah">Doa Setelah Iqomah</option>' +
-      '<option value="Doa Selesai Wudhu">Doa Selesai Wudhu</option>' +
-      '<option value="Doa Bercermin">Doa Bercermin</option>' +
-      '<option value="Doa Untuk Orang Tua">Doa Untuk Orang Tua</option>' +
-      '<option value="Doa Qunut">Doa Qunut</option>';
-  }
+    var list_materi = "";
+    var materi = window.localStorage.getItem("materi_hafalan");
+    if (materi != null) {
+      list_materi =
+        "<option " +
+        (materi == "Doa Iftitah" ? "selected" : "") +
+        ' value="Doa Iftitah">Doa Iftitah</option>' +
+        "<option " +
+        (materi == "Surah Al - Fatihah" ? "selected" : "") +
+        ' value="Surah Al - Fatihah">Surah Al - Fatihah</option>' +
+        "<option " +
+        (materi == "Doa Ruku & Itidal" ? "selected" : "") +
+        ' value="Doa Ruku & Itidal">Doa Ruku & Itidal</option>' +
+        "<option " +
+        (materi == "Doa Sujud" ? "selected" : "") +
+        ' value="Doa Sujud">Doa Sujud</option>' +
+        "<option " +
+        (materi == "Doa Duduk iftirasy" ? "selected" : "") +
+        ' value="Doa Duduk iftirasy">Doa Duduk iftirasy</option>' +
+        "<option " +
+        (materi == "Doa Tasyahud" ? "selected" : "") +
+        ' value="Doa Tasyahud">Doa Tasyahud</option>' +
+        "<option " +
+        (materi == "Dzikir Bada Sholat" ? "selected" : "") +
+        ' value="Dzikir Bada Sholat">Dzikir Bada Sholat</option>' +
+        "<option " +
+        (materi == "Doa Kebaikan" ? "selected" : "") +
+        ' value="Doa Kebaikan">Doa Kebaikan Dunia & Akhirat</option>' +
+        "<option " +
+        (materi == "Doa Sebelum Makan" ? "selected" : "") +
+        ' value="Doa Sebelum Makan">Doa Sebelum Makan</option>' +
+        "<option " +
+        (materi == "Doa Setelah Makan" ? "selected" : "") +
+        ' value="Doa Setelah Makan">Doa Setelah Makan</option>' +
+        "<option " +
+        (materi == "Doa Sebelum Tidur" ? "selected" : "") +
+        ' value="Doa Sebelum Tidur">Doa Sebelum Tidur</option>' +
+        "<option " +
+        (materi == "Doa Bangun Tidur" ? "selected" : "") +
+        ' value="Doa Bangun Tidur">Doa Bangun Tidur</option>' +
+        "<option " +
+        (materi == "Doa Masuk Rumah" ? "selected" : "") +
+        ' value="Doa Masuk Rumah">Doa Masuk Rumah</option>' +
+        "<option " +
+        (materi == "Doa Keluar Rumah" ? "selected" : "") +
+        ' value="Doa Keluar Rumah">Doa Keluar Rumah</option>' +
+        "<option " +
+        (materi == "Doa Masuk WC" ? "selected" : "") +
+        ' value="Doa Masuk WC">Doa Masuk WC</option>' +
+        "<option " +
+        (materi == "Doa Keluar WC" ? "selected" : "") +
+        ' value="Doa Keluar WC">Doa Keluar WC</option>' +
+        "<option " +
+        (materi == "Doa Setelah Adzan" ? "selected" : "") +
+        ' value="Doa Setelah Adzan">Doa Setelah Adzan</option>' +
+        "<option " +
+        (materi == "Doa Setelah Iqomah" ? "selected" : "") +
+        ' value="Doa Setelah Iqomah">Doa Setelah Iqomah</option>' +
+        "<option " +
+        (materi == "Doa Selesai Wudhu" ? "selected" : "") +
+        ' value="Doa Selesai Wudhu">Doa Selesai Wudhu</option>' +
+        "<option " +
+        (materi == "Doa Bercermin" ? "selected" : "") +
+        ' value="Doa Bercermin">Doa Bercermin</option>' +
+        "<option " +
+        (materi == "Doa Untuk Orang Tua" ? "selected" : "") +
+        ' value="Doa Untuk Orang Tua">Doa Untuk Orang Tua</option>' +
+        "<option " +
+        (materi == "Doa Qunut" ? "selected" : "") +
+        ' value="Doa Qunut">Doa Qunut</option>';
+    } else {
+      list_materi =
+        '<option value="Doa Iftitah">Doa Iftitah</option>' +
+        '<option value="Surah Al - Fatihah">Surah Al - Fatihah</option>' +
+        '<option value="Doa Ruku & Itidal">Doa Ruku & Itidal</option>' +
+        '<option value="Doa Sujud">Doa Sujud</option>' +
+        '<option value="Doa Duduk iftirasy">Doa Duduk iftirasy</option>' +
+        '<option value="Doa Tasyahud">Doa Tasyahud</option>' +
+        '<option value="Dzikir Bada Sholat">Dzikir Bada Sholat</option>' +
+        '<option value="Doa Kebaikan">Doa Kebaikan Dunia & Akhirat</option>' +
+        '<option value="Doa Sebelum Makan">Doa Sebelum Makan</option>' +
+        '<option value="Doa Setelah Makan">Doa Setelah Makan</option>' +
+        '<option value="Doa Sebelum Tidur">Doa Sebelum Tidur</option>' +
+        '<option value="Doa Bangun Tidur">Doa Bangun Tidur</option>' +
+        '<option value="Doa Masuk Rumah">Doa Masuk Rumah</option>' +
+        '<option value="Doa Keluar Rumah">Doa Keluar Rumah</option>' +
+        '<option value="Doa Masuk WC">Doa Masuk WC</option>' +
+        '<option value="Doa Keluar WC">Doa Keluar WC</option>' +
+        '<option value="Doa Setelah Adzan">Doa Setelah Adzan</option>' +
+        '<option value="Doa Setelah Iqomah">Doa Setelah Iqomah</option>' +
+        '<option value="Doa Selesai Wudhu">Doa Selesai Wudhu</option>' +
+        '<option value="Doa Bercermin">Doa Bercermin</option>' +
+        '<option value="Doa Untuk Orang Tua">Doa Untuk Orang Tua</option>' +
+        '<option value="Doa Qunut">Doa Qunut</option>';
+    }
 
-  $("#materi_hafalan").append(list_materi);
+    $("#materi_hafalan").append(list_materi);
+  });
 
   function postData() {
     event.preventDefault();

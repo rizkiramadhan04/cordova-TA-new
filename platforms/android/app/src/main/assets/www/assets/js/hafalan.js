@@ -261,7 +261,7 @@ function confirm(param) {
   }
 
   navigator.notification.confirm(
-    "Anda ingin menghapus hafalan ini!", // message
+    "Anda ingin menghapus data hafalan ini!", // message
     onConfirm, // callback to invoke with index of button pressed
     TITLE_ALERT, // title
     ["Oke", "Tidak"] // buttonLabels
@@ -272,6 +272,8 @@ function deleteHafalan(hafalan_id) {
   var data = {
     id: hafalan_id,
   };
+
+  // console.log(data);
 
   $.ajax({
     beforeSend: function (xhr) {
@@ -286,7 +288,7 @@ function deleteHafalan(hafalan_id) {
   })
     .done(function (values) {
       console.log(values);
-      if (values.status == "success") {
+      if (values.status == "Success") {
         navigator.notification.alert(
           values.message,
           alertDismissed,

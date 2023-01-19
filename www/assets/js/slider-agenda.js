@@ -191,13 +191,13 @@ if (firstCon == "online") {
         console.log(
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
-        // navigator.notification.alert('Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001', alertDismissed, TITLE_ALERT, 'Ok');
+        // navigator.notification.alert('Koneksi offline - Cek koneksi internet Anda. ', alertDismissed, TITLE_ALERT, 'Ok');
       } else {
         if (textStatus == "timeout") {
           console.log(
             "Network error (i.e. connection refused, access denied due to CORS, etc.)"
           );
-          // navigator.notification.alert('Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001', alertDismissed, TITLE_ALERT, 'Ok');
+          // navigator.notification.alert('Request Time Out - Cek koneksi internet Anda. ', alertDismissed, TITLE_ALERT, 'Ok');
         }
       }
     });
@@ -208,7 +208,7 @@ if (firstCon == "online") {
   $(".slider-agenda3").attr("src", "assets/img/sample/news/loading.gif");
   $(".slider-agenda4").attr("src", "assets/img/sample/news/loading.gif");
   $(".slider-agenda5").attr("src", "assets/img/sample/news/loading.gif");
-  // navigator.notification.alert('Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001', alertDismissed, TITLE_ALERT, 'Ok');
+  // navigator.notification.alert('Koneksi offline - Cek koneksi internet Anda. ', alertDismissed, TITLE_ALERT, 'Ok');
 }
 
 function clickAgendaDetailDashboard(id) {

@@ -252,7 +252,7 @@ function confirm(param) {
   }
 
   navigator.notification.confirm(
-    "Anda ingin menghapus voucher ini!", // message
+    "Anda ingin menghapus data mengajar ini!", // message
     onConfirm, // callback to invoke with index of button pressed
     TITLE_ALERT, // title
     ["Oke", "Tidak"] // buttonLabels
