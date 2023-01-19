@@ -28,6 +28,9 @@ if (firstCon == "online") {
       // console.log(results);
 
       if (values.status == "success") {
+        window.localStorage.removeItem("murid_id");
+        window.localStorage.setItem("murid_id", results.murid_id);
+
         $("#nilai").val(results.nilai);
         $("#tanggal_hafalan").val(results.tanggal_hafalan);
 
