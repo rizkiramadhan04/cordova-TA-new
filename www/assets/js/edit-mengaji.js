@@ -28,7 +28,7 @@ if (firstCon == "online") {
     })
       .done(function (values) {
         var results = values.data;
-        console.log(results);
+        // console.log(results);
 
         window.localStorage.removeItem("jenis_kitab");
         window.localStorage.setItem("jenis_kitab", results.jenis_kitab);
@@ -208,7 +208,7 @@ $.ajax({
   timeout: timeout,
 })
   .done(function (values) {
-    console.log(values);
+    // console.log(values);
     var data = values.data;
     SpinnerDialog.hide();
     if (values.status == "failed") {
@@ -281,7 +281,7 @@ $.ajax({
   timeout: timeout,
 })
   .done(function (values) {
-    console.log(values);
+    // console.log(values);
     var data = values.data;
     SpinnerDialog.hide();
 
@@ -365,7 +365,7 @@ function postData() {
     tanggal: $("#tanggal").val(),
   };
 
-  console.log(data);
+  // console.log(data);
 
   $.ajax({
     beforeSend: function (xhr) {
@@ -382,7 +382,7 @@ function postData() {
     data: data,
   })
     .done(function (values) {
-      console.log(values);
+      // console.log(values);
 
       SpinnerDialog.hide();
       if (values.status == "failed") {

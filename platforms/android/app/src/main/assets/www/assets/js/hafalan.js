@@ -237,7 +237,7 @@ if (firstCon == "online") {
 } else {
   SpinnerDialog.hide();
   navigator.notification.alert(
-    "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+    "Koneksi offline - Cek koneksi internet Anda.",
     alertDismissed,
     TITLE_ALERT,
     "Ok"
@@ -287,7 +287,7 @@ function deleteHafalan(hafalan_id) {
     data: data,
   })
     .done(function (values) {
-      console.log(values);
+      // console.log(values);
       if (values.status == "Success") {
         navigator.notification.alert(
           values.message,
@@ -308,7 +308,7 @@ function deleteHafalan(hafalan_id) {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda.",
           alertDismissed,
           TITLE_ALERT,
           "Ok"

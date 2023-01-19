@@ -30,7 +30,7 @@ $.ajax({
   timeout: timeout,
 })
   .done(function (values) {
-    console.log(values);
+    // console.log(values);
     if (values.status == "errors" || values.status == "failed") {
       navigator.notification.alert(
         values.message,

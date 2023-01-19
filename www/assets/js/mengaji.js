@@ -143,7 +143,7 @@ if (firstCon == "online") {
       // data: data,
     })
       .done(function (values) {
-        console.log(values);
+        // console.log(values);
         var results = values.data;
 
         SpinnerDialog.hide();
@@ -276,7 +276,7 @@ function deleteCatatan(pencatatan_id) {
     data: data,
   })
     .done(function (values) {
-      console.log(values);
+      // console.log(values);
       if (values.status == "success") {
         navigator.notification.alert(
           values.message,

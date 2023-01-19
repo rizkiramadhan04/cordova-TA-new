@@ -28,7 +28,7 @@ if (firstCon == "online") {
     timeout: timeout,
   })
     .done(function (values) {
-      console.log(values);
+      // console.log(values);
       var data = values.data;
       SpinnerDialog.hide();
 
@@ -119,7 +119,7 @@ if (firstCon == "online") {
       data: data,
     })
       .done(function (values) {
-        console.log(values);
+        // console.log(values);
 
         SpinnerDialog.hide();
         if (values.status == "failed") {

@@ -1,7 +1,6 @@
 var firstCon = firstConnection();
 
 if (firstCon == "online") {
- 
   $.ajax({
     beforeSend: function (xhr) {
       $(".img-slider-dsb-0").attr("src", "assets/img/sample/news/loading.gif");
@@ -210,7 +209,7 @@ if (firstCon == "online") {
           "Network error (i.e. connection refused, access denied due to CORS, etc.)"
         );
         navigator.notification.alert(
-          "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+          "Koneksi offline - Cek koneksi internet Anda.",
           alertDismissed,
           TITLE_ALERT,
           "Ok"
@@ -218,7 +217,7 @@ if (firstCon == "online") {
       } else {
         if (textStatus == "timeout") {
           navigator.notification.alert(
-            "Request Time Out - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #OFF-001",
+            "Request Time Out - Cek koneksi internet Anda.",
             alertDismissed,
             TITLE_ALERT,
             "Ok"
@@ -233,7 +232,7 @@ if (firstCon == "online") {
   $(".img-slider-dsb-2").attr("src", "assets/img/sample/news/loading.gif");
   $(".img-slider-dsb-3").attr("src", "assets/img/sample/news/loading.gif");
   navigator.notification.alert(
-    "Koneksi offline - Cek koneksi internet Anda. Silahkan hubungi Call Center : Kode #DB-001",
+    "Koneksi offline - Cek koneksi internet Anda.",
     alertDismissed,
     TITLE_ALERT,
     "Ok"

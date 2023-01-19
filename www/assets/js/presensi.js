@@ -1,42 +1,11 @@
-$("#resultCheckPresensi").hide();
-$("#scanner-reader-content").hide();
-
-function openScanner() {
-  $("#scanner-reader-content").show();
-  $("#containerButtonOpen").hide();
-}
-
-// console.log(openScanner());
-
-function onScanSuccess(qrCodeMessage) {
-  $("#resultCheckPresensi").show();
-  $("#containerButtonOpen").hide();
-
-  html5QrcodeScanner.clear();
-  // console.log("Hasil pembacaan QR : ", qrCodeMessage);
-
-  $("#formUploadKodeJadwal").val(qrCodeMessage);
-}
-
-function onScanError(errorMessage) {
-  console.log("Pesan error Scan :", errorMessage);
-  '<span class="result">' + errorMessage + "</span>";
-  $("#resultCheckPresensi").hide();
-  $("#containerButtonOpen").show();
-  //handle scan error
-}
-
-var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-  fps: 10,
-  qrbox: 250,
-});
-html5QrcodeScanner.render(onScanSuccess, onScanError);
-
 var nama_user = window.localStorage.getItem("name");
 var status_user = window.localStorage.getItem("status_user");
 
 $(document).ready(function () {
-  // console.log();
+  $("#resultCheckPresensi").hide();
+  $("#scanner-reader-content").hide();
+  $("#tombol-submit").hide();
+
   if (status_user == "Guru") {
     $("#back-murid").hide();
     $("#back-guru").show();
@@ -49,11 +18,46 @@ $(document).ready(function () {
   // console.log(moment());
 
   $("#nama_user_izin").val(nama_user);
+  console.log($("#nama_user_izin").val(nama_user));
   $("#namePresensiUser").append(nama_user);
   $("#timePresensiUser").append(date_time);
 
   $("#formUploadTanggal").val(date_time);
 });
+
+function openScanner() {
+  $("#scanner-reader-content").show();
+  $("#containerButtonOpen").hide();
+}
+
+// console.log(openScanner());
+
+function onScanSuccess(qrCodeMessage) {
+  $("#resultCheckPresensi").show();
+  $("#tombol-submit").show();
+  $("#containerButtonOpen").hide();
+
+  html5QrcodeScanner.clear();
+  // console.log("Hasil pembacaan QR : ", qrCodeMessage);
+
+  $("#formUploadKodeJadwal").val(qrCodeMessage);
+}
+
+function onScanError(errorMessage) {
+  console.log("Pesan error Scan :", errorMessage);
+  '<span class="result">' + errorMessage + "</span>";
+  $("#resultCheckPresensi").hide();
+  $("#tombol-submit").hide();
+  $("#containerButtonOpen").show();
+  //handle scan error
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+  fps: 10,
+  qrbox: 250,
+});
+
+html5QrcodeScanner.render(onScanSuccess, onScanError);
 
 var firstCon = firstConnection();
 
@@ -80,8 +84,8 @@ function uploadPresensi() {
   })
     .done(function (values) {
       if (values.status == "failed") {
-        console.log("Status : ", values.status == "failed");
-        console.log("Status user : ", status_user);
+        // console.log("Status : ", values.status == "failed");
+        // console.log("Status user : ", status_user);
         if (status_user == "Murid") {
           pages("presensi");
 
@@ -165,7 +169,7 @@ function postIzin() {
     data: data,
   })
     .done(function (values) {
-      console.log(values);
+      // console.log(values);
       var results = values.data;
 
       SpinnerDialog.hide();
