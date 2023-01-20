@@ -160,6 +160,36 @@ var callbackActionSheet = function (tipe_foto, buttonIndex) {
   });
 };
 
+function fotoActionSheet(tipe_foto) {
+  window.localStorage.setItem("camera_active_sess", "1");
+  var options = {
+    androidTheme:
+      window.plugins.actionsheet.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT, // default is THEME_TRADITIONAL
+    title: "Ambil Foto",
+    subtitle: "Ambil foto dari kamera atau dari gallery", // supported on iOS only
+    buttonLabels: ["Kamera", "Gallery"],
+    androidEnableCancelButton: true, // default false
+    winphoneEnableCancelButton: true, // default false
+    addCancelButtonWithLabel: "Batal",
+    position: [20, 40], // for iPad pass in the [x, y] position of the popover
+    destructiveButtonLast: true, // you can choose where the destructive button is shown
+  };
+  // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
+  // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
+  if (tipe_foto == "foto_user") {
+    window.plugins.actionsheet.show(
+      options,
+      callbackActionSheet2.bind(this, tipe_foto)
+    );
+  } else {
+    window.plugins.actionsheet.show(
+      options,
+      callbackActionSheet.bind(this, tipe_foto)
+    );
+  }
+  // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
+}
+
 function onOffline() {
   console.log("offline");
   $(".dotNetworkIndicator").css("background-color", "#ececec");
