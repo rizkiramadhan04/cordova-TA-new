@@ -47,7 +47,7 @@ if (firstCon == "online") {
         // console.log(results);
         var result_list = "";
 
-        if (results.length == 3) {
+        if (results.length == 3 || results.length > 3) {
           result_list +=
             '<a href="javascript:void(0)">' +
             '<div class="row detail item mb-2 p-0">' +
