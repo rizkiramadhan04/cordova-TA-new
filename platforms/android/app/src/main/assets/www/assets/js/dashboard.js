@@ -1,4 +1,6 @@
 var firstCon = firstConnection();
+var user_id = window.localStorage.getItem("userID");
+
 $(document).ready(function () {
   checkIsLoggedIn().done(function (values) {
     if (values.status_login == false) {
@@ -24,8 +26,8 @@ if (firstCon == "online") {
       );
       xhr.setRequestHeader("Accept", "application/json");
     },
-    type: "POST",
-    url: conn + "/get-data-presensi",
+    type: "GET",
+    url: conn + `/get-data-presensi/${user_id}`,
     dataType: "json",
     timeout: timeout,
     data: data,
@@ -47,7 +49,7 @@ if (firstCon == "online") {
         // console.log(results);
         var result_list = "";
 
-        if (results.length == 3) {
+        if (results.length == 3 || results.length > 3) {
           result_list +=
             '<a href="javascript:void(0)">' +
             '<div class="row detail item mb-2 p-0">' +

@@ -1,4 +1,5 @@
 var firstCon = firstConnection();
+var user_id = window.localStorage.getItem("userID");
 
 if (firstCon == "online") {
   // presensi
@@ -14,8 +15,8 @@ if (firstCon == "online") {
       );
       xhr.setRequestHeader("Accept", "application/json");
     },
-    type: "POST",
-    url: conn + "/get-data-presensi",
+    type: "GET",
+    url: conn + `/get-data-presensi/${user_id}`,
     dataType: "json",
     timeout: timeout,
     data: data,

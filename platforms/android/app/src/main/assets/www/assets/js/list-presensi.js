@@ -1,6 +1,7 @@
 var firstCon = firstConnection();
 var status_presensi = window.localStorage.getItem("status_presensi");
 var status_user = window.localStorage.getItem("status_user");
+var user_id = window.localStorage.getItem("userID");
 
 if (status_user == "Guru") {
   $("#back-murid").hide();
@@ -37,8 +38,8 @@ $.ajax({
     );
     xhr.setRequestHeader("Accept", "application/json");
   },
-  type: "POST",
-  url: conn + "/get-data-presensi",
+  type: "GET",
+  url: conn + `/get-data-presensi/${user_id}`,
   dataType: "json",
   timeout: timeout,
   data: data,
