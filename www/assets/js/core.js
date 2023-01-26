@@ -182,11 +182,8 @@ function fotoActionSheet(tipe_foto) {
       callbackActionSheet2.bind(this, tipe_foto)
     );
   } else {
-    console.log("Hello");
-    // window.plugins.actionsheet.show(
-    //   options,
-    //   callbackActionSheet.bind(this, tipe_foto)
-    // );
+    // console.log("Hello");
+    window.plugins.actionsheet.show(options);
   }
   // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
 }
@@ -341,117 +338,117 @@ function checkConnection() {
   return states[networkState];
 }
 
-function drop(item, transaction) {
-  // console.log("Drop table " + item);
-  transaction.executeSql("DROP TABLE IF EXISTS " + item);
-}
+// function drop(item, transaction) {
+//   // console.log("Drop table " + item);
+//   transaction.executeSql("DROP TABLE IF EXISTS " + item);
+// }
 
-function database(item, transaction) {
-  switch (item) {
-    case "customer_local":
-      transaction.executeSql(
-        "CREATE TABLE IF NOT EXISTS customer_local (id INTEGER PRIMARY KEY, id_server INTEGER, " +
-          "name VARCHAR(100), email VARCHAR(100), no_hp VARCHAR(20), " +
-          "product_id INTEGER, " +
-          "device_uuid VARCHAR(40), " +
-          "status_sync VARCHAR(2)," +
-          "photo_id_card LONGTEXT, " +
-          "photo_invoice LONGTEXT, " +
-          "photo_open_box LONGTEXT, " +
-          "photo_customer LONGTEXT, " +
-          "time_created DATETIME, time_modified DATETIME)",
-        [],
-        function (tx, result) {
-          //console.log("Table customer created successfully.");
-        },
-        function (error, e) {
-          console.log(
-            "Error occurred while creating the table customer_local."
-          );
-          console.log("Error : " + e.message);
-        }
-      );
-      break;
+// function database(item, transaction) {
+//   switch (item) {
+//     case "customer_local":
+//       transaction.executeSql(
+//         "CREATE TABLE IF NOT EXISTS customer_local (id INTEGER PRIMARY KEY, id_server INTEGER, " +
+//           "name VARCHAR(100), email VARCHAR(100), no_hp VARCHAR(20), " +
+//           "product_id INTEGER, " +
+//           "device_uuid VARCHAR(40), " +
+//           "status_sync VARCHAR(2)," +
+//           "photo_id_card LONGTEXT, " +
+//           "photo_invoice LONGTEXT, " +
+//           "photo_open_box LONGTEXT, " +
+//           "photo_customer LONGTEXT, " +
+//           "time_created DATETIME, time_modified DATETIME)",
+//         [],
+//         function (tx, result) {
+//           //console.log("Table customer created successfully.");
+//         },
+//         function (error, e) {
+//           console.log(
+//             "Error occurred while creating the table customer_local."
+//           );
+//           console.log("Error : " + e.message);
+//         }
+//       );
+//       break;
 
-    case "customer_server":
-      transaction.executeSql(
-        "CREATE TABLE IF NOT EXISTS customer_server (id INTEGER PRIMARY KEY, id_server INTEGER, " +
-          "name VARCHAR(100), email VARCHAR(100), no_hp VARCHAR(20), " +
-          "product_id INTEGER, " +
-          "device_uuid VARCHAR(40), " +
-          "status VARCHAR(100), " +
-          "photo_id_card LONGTEXT, " +
-          "photo_invoice LONGTEXT, " +
-          "photo_customer LONGTEXT, " +
-          "time_created DATETIME, time_modified DATETIME)",
-        [],
-        function (tx, result) {
-          //console.log("Table customer created successfully.");
-        },
-        function (error, e) {
-          console.log(
-            "Error occurred while creating the table customer_server."
-          );
-          console.log("Error : " + e.message);
-        }
-      );
-      break;
-  }
-} //end function database
+//     case "customer_server":
+//       transaction.executeSql(
+//         "CREATE TABLE IF NOT EXISTS customer_server (id INTEGER PRIMARY KEY, id_server INTEGER, " +
+//           "name VARCHAR(100), email VARCHAR(100), no_hp VARCHAR(20), " +
+//           "product_id INTEGER, " +
+//           "device_uuid VARCHAR(40), " +
+//           "status VARCHAR(100), " +
+//           "photo_id_card LONGTEXT, " +
+//           "photo_invoice LONGTEXT, " +
+//           "photo_customer LONGTEXT, " +
+//           "time_created DATETIME, time_modified DATETIME)",
+//         [],
+//         function (tx, result) {
+//           //console.log("Table customer created successfully.");
+//         },
+//         function (error, e) {
+//           console.log(
+//             "Error occurred while creating the table customer_server."
+//           );
+//           console.log("Error : " + e.message);
+//         }
+//       );
+//       break;
+//   }
+// } //end function database
 
-function insertQuery(item) {
-  var query;
+// function insertQuery(item) {
+//   var query;
 
-  switch (item) {
-    case "customer_local":
-      query =
-        "INSERT OR REPLACE INTO customer_local (name, no_hp, email, product_id, device_uuid, " +
-        "status_sync, photo_id_card, photo_invoice, photo_customer)";
-      break;
+//   switch (item) {
+//     case "customer_local":
+//       query =
+//         "INSERT OR REPLACE INTO customer_local (name, no_hp, email, product_id, device_uuid, " +
+//         "status_sync, photo_id_card, photo_invoice, photo_customer)";
+//       break;
 
-    case "customer_server":
-      query =
-        "INSERT OR REPLACE INTO customer_server (id_server, name, no_hp, email, status, product_id, device_uuid, data_type, " +
-        "photo_id_card, photo_invoice, photo_customer, time_created)";
-      break;
+//     case "customer_server":
+//       query =
+//         "INSERT OR REPLACE INTO customer_server (id_server, name, no_hp, email, status, product_id, device_uuid, data_type, " +
+//         "photo_id_card, photo_invoice, photo_customer, time_created)";
+//       break;
 
-    default:
-      query = "";
-      break;
-  }
+//     default:
+//       query = "";
+//       break;
+//   }
 
-  return query;
-}
+//   return query;
+// }
 
-function insertDatabase(item, values, transaction) {
-  transaction.executeSql(
-    insertQuery(item) + " VALUES " + values,
-    [],
-    function (tx, result) {
-      window.localStorage.setItem(item + "_insertId", result.insertId);
-      // console.log(insertQuery(item) + " VALUES " + values);
-    },
-    function (error, e) {
-      console.log(insertQuery(item) + " VALUES " + values);
-      console.log("Error occurred while insert table " + item + ".");
-      console.log("Error : " + e.message);
-    }
-  );
-}
+// function insertDatabase(item, values, transaction) {
+//   transaction.executeSql(
+//     insertQuery(item) + " VALUES " + values,
+//     [],
+//     function (tx, result) {
+//       window.localStorage.setItem(item + "_insertId", result.insertId);
+//       // console.log(insertQuery(item) + " VALUES " + values);
+//     },
+//     function (error, e) {
+//       console.log(insertQuery(item) + " VALUES " + values);
+//       console.log("Error occurred while insert table " + item + ".");
+//       console.log("Error : " + e.message);
+//     }
+//   );
+// }
 
-function insertMassData(item, query, transaction) {
-  transaction.executeSql(
-    query,
-    [],
-    function (tx, result) {
-      //console.log("Insert table " + item + " successfully.");
-    },
-    function (error, e) {
-      console.log("Error occurred while insert table " + item + ".");
-      console.log("Error : " + e.message);
-    }
-  );
-}
+// function insertMassData(item, query, transaction) {
+//   transaction.executeSql(
+//     query,
+//     [],
+//     function (tx, result) {
+//       //console.log("Insert table " + item + " successfully.");
+//     },
+//     function (error, e) {
+//       console.log("Error occurred while insert table " + item + ".");
+//       console.log("Error : " + e.message);
+//     }
+//   );
+// }
 
 function pages(main) {
   //console.log('show page ' + main);

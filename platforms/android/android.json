@@ -9,7 +9,7 @@
         "parents": {
           "/manifest/application": [
             {
-              "xml": "<application android:usesCleartextTraffic=\"true\" />",
+              "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
               "count": 2,
               "mode": "merge",
               "id": "config.xml",
@@ -18,12 +18,28 @@
                 "android:hardwareAccelerated": "true",
                 "android:icon": "@mipmap/ic_launcher",
                 "android:label": "@string/app_name",
+                "android:name": "android.permission.CAMERA",
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
             },
             {
               "xml": "<intent-filter android:autoVerify=\"true\"><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:host=\"onelink-basic-app.onelink.me\" android:pathPrefix=\"/H5hv\" android:scheme=\"https\" /></intent-filter>",
+              "count": 2,
+              "mode": "merge",
+              "id": "config.xml",
+              "oldAttrib": {
+                "android:autoVerify": "true",
+                "android:hardwareAccelerated": "true",
+                "android:icon": "@mipmap/ic_launcher",
+                "android:label": "@string/app_name",
+                "android:name": "android.permission.CAMERA",
+                "android:supportsRtl": "true",
+                "android:usesCleartextTraffic": "true"
+              }
+            },
+            {
+              "xml": "<application android:usesCleartextTraffic=\"true\" />",
               "count": 1,
               "mode": "merge",
               "id": "config.xml",
@@ -32,6 +48,7 @@
                 "android:hardwareAccelerated": "true",
                 "android:icon": "@mipmap/ic_launcher",
                 "android:label": "@string/app_name",
+                "android:name": "android.permission.CAMERA",
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
@@ -72,10 +89,6 @@
             },
             {
               "xml": "<feature name=\"CacheClear\"><param name=\"android-package\" value=\"com.anrip.cordova.CacheClear\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
               "count": 1
             },
             {
@@ -126,10 +139,6 @@
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 2
-            },
-            {
-              "xml": "<queries><intent><action android:name=\"android.media.action.IMAGE_CAPTURE\" /></intent><intent><action android:name=\"android.intent.action.GET_CONTENT\" /></intent><intent><action android:name=\"android.intent.action.PICK\" /></intent><intent><action android:name=\"com.android.camera.action.CROP\" /><data android:mimeType=\"image/*\" android:scheme=\"content\" /></intent></queries>",
               "count": 1
             },
             {
@@ -187,12 +196,7 @@
               "count": 1
             }
           ],
-          "application": [
-            {
-              "xml": "<provider android:authorities=\"${applicationId}.cordova.plugin.camera.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"org.apache.cordova.camera.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/camera_provider_paths\" /></provider>",
-              "count": 1
-            }
-          ]
+          "application": []
         }
       },
       "config.xml": {
@@ -731,10 +735,6 @@
     "cordova-plugin-cache-clear": {
       "PACKAGE_NAME": "com.rizkiramadhan.aplikasiTA"
     },
-    "cordova-plugin-camera": {
-      "ANDROIDX_CORE_VERSION": "1.6.+",
-      "PACKAGE_NAME": "com.rizkiramadhan.aplikasiTA"
-    },
     "cordova-plugin-datetimepicker": {
       "PACKAGE_NAME": "com.rizkiramadhan.aplikasiTA"
     },
@@ -1097,38 +1097,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-camera.Camera",
-      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "Camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverOptions",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverOptions"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.camera",
-      "file": "plugins/cordova-plugin-camera/www/Camera.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "navigator.camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverHandle",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverHandle"
-      ]
-    },
-    {
       "id": "cordova-plugin-datetimepicker.plugin",
       "file": "plugins/cordova-plugin-datetimepicker/www/plugin.js",
       "pluginId": "cordova-plugin-datetimepicker",
@@ -1261,7 +1229,6 @@
     "cordova-plugin-badge": "0.8.8",
     "cordova-plugin-barcodescanner": "0.7.4",
     "cordova-plugin-cache-clear": "1.3.7",
-    "cordova-plugin-camera": "6.0.0",
     "cordova-plugin-datetimepicker": "1.0.0",
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-dialogs": "2.0.2",

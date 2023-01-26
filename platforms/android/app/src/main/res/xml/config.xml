@@ -23,9 +23,6 @@
     <feature name="CacheClear">
         <param name="android-package" value="com.anrip.cordova.CacheClear" />
     </feature>
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
     <feature name="DateTimePicker">
         <param name="android-package" value="com.alexanderploner.datetimepicker.DateTimePicker" />
         <param name="onload" value="true" />
@@ -90,6 +87,7 @@
     <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
     <splash density="port-xxhdpi" src="res/screen/android/screen-xxhdpi-portrait.png" />
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
+        <uses-permission android:name="android.permission.CAMERA" />
         <application android:usesCleartextTraffic="true" />
         <intent-filter android:autoVerify="true">
             <action android:name="android.intent.action.VIEW" />
