@@ -136,7 +136,7 @@ if (firstCon == "online") {
         );
         xhr.setRequestHeader("Accept", "application/json");
       },
-      type: "POST",
+      type: "GET",
       url: conn + "/get-data-pencatatan",
       dataType: "json",
       timeout: timeout,
@@ -260,20 +260,15 @@ function confirm(param) {
 }
 
 function deleteCatatan(pencatatan_id) {
-  var data = {
-    id: pencatatan_id,
-  };
-
   $.ajax({
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Accept", "application/json");
     },
 
-    type: "POST",
-    url: conn + "/delete-data-pencatatan",
+    type: "DELETE",
+    url: conn + `/delete-data-pencatatan/${pencatatan_id}`,
     dataType: "json",
     timeout: timeout,
-    data: data,
   })
     .done(function (values) {
       // console.log(values);

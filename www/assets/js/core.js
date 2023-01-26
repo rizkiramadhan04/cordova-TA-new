@@ -182,10 +182,11 @@ function fotoActionSheet(tipe_foto) {
       callbackActionSheet2.bind(this, tipe_foto)
     );
   } else {
-    window.plugins.actionsheet.show(
-      options,
-      callbackActionSheet.bind(this, tipe_foto)
-    );
+    console.log("Hello");
+    // window.plugins.actionsheet.show(
+    //   options,
+    //   callbackActionSheet.bind(this, tipe_foto)
+    // );
   }
   // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
 }
@@ -341,7 +342,7 @@ function checkConnection() {
 }
 
 function drop(item, transaction) {
-  console.log("Drop table " + item);
+  // console.log("Drop table " + item);
   transaction.executeSql("DROP TABLE IF EXISTS " + item);
 }
 
@@ -689,7 +690,7 @@ function loginOnline() {
       data: data,
     })
       .done(function (values) {
-        console.log(values);
+        // console.log(values);
         if (values.status == "error") {
           navigator.notification.alert(
             values.message,

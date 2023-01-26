@@ -296,7 +296,7 @@ if (firstCon == "online") {
       );
       xhr.setRequestHeader("Accept", "application/json");
     },
-    type: "POST",
+    type: "GET",
     url: conn + "/get-data-pencatatan",
     dataType: "json",
     timeout: timeout,
@@ -529,7 +529,7 @@ if (firstCon == "online") {
       );
       xhr.setRequestHeader("Accept", "application/json");
     },
-    type: "POST",
+    type: "GET",
     url: conn + "/get-data-hafalan",
     dataType: "json",
     timeout: timeout,

@@ -1,8 +1,9 @@
 var firstCon = firstConnection();
 var id_agenda = window.localStorage.getItem("id_agenda");
 var status_user = window.localStorage.getItem("status_user");
+var id_agenda = window.localStorage.getItem("id_agenda");
 
-console.log(status_user);
+// console.log(status_user);
 
 $(document).ready(function () {
   if (status_user == "Guru") {
@@ -15,15 +16,15 @@ $(document).ready(function () {
 });
 
 if (firstCon == "online") {
-  data = {
-    id_agenda: window.localStorage.getItem("id_agenda"),
-  };
+  // data = {
+  //   id_agenda: window.localStorage.getItem("id_agenda"),
+  // };
   $.ajax({
-    type: "POST",
-    url: conn + "/get-detail-data-agenda",
+    type: "GET",
+    url: conn + `/get-detail-data-agenda/${id_agenda}`,
     dataType: "json",
     timeout: timeout,
-    data: data,
+    // data: data,
   })
     .done(function (values) {
       var data_agnd = values.data;

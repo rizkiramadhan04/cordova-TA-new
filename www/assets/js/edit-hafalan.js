@@ -9,19 +9,15 @@ $(document).ready(function () {
 });
 
 if (firstCon == "online") {
-  data = {
-    data_id: data_id,
-  };
-
   $.ajax({
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Accept", "application/json");
     },
-    type: "POST",
-    url: conn + "/get-data-hafalan-id",
+    type: "GET",
+    url: conn + `/get-data-hafalan-id/${data_id}`,
     dataType: "json",
     timeout: timeout,
-    data: data,
+    // data: data,
   })
     .done(function (values) {
       var results = values.data;
@@ -271,7 +267,6 @@ if (firstCon == "online") {
     SpinnerDialog.show(null, "Mengirim data ...");
 
     data = {
-      hafalan_id: data_id,
       murid_id: $("#murid_id").val(),
       jenis: $("#jenis").val(),
       materi_hafalan: $("#materi_hafalan").val(),
@@ -289,8 +284,8 @@ if (firstCon == "online") {
         );
         xhr.setRequestHeader("Accept", "application/json");
       },
-      type: "POST",
-      url: conn + "/update-data-hafalan",
+      type: "PUT",
+      url: conn + `/update-data-hafalan/${data_id}`,
       dataType: "json",
       timeout: timeout,
       data: data,

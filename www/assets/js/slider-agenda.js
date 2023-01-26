@@ -16,7 +16,6 @@ if (firstCon == "online") {
     // data: data,
   })
     .done(function (values) {
-      // console.log(values);
       SpinnerDialog.hide();
       if (values.status == "errors") {
         //navigator.notification.alert(values.message, alertDismissed, TITLE_ALERT, 'Ok');

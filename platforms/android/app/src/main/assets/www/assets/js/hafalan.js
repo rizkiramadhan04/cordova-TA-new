@@ -143,7 +143,7 @@ if (firstCon == "online") {
         );
         xhr.setRequestHeader("Accept", "application/json");
       },
-      type: "POST",
+      type: "GET",
       url: conn + "/get-data-hafalan",
       dataType: "json",
       timeout: timeout,
@@ -269,10 +269,6 @@ function confirm(param) {
 }
 
 function deleteHafalan(hafalan_id) {
-  var data = {
-    id: hafalan_id,
-  };
-
   // console.log(data);
 
   $.ajax({
@@ -280,11 +276,10 @@ function deleteHafalan(hafalan_id) {
       xhr.setRequestHeader("Accept", "application/json");
     },
 
-    type: "POST",
-    url: conn + "/delete-data-hafalan",
+    type: "DELETE",
+    url: conn + `/delete-data-hafalan/${hafalan_id}`,
     dataType: "json",
     timeout: timeout,
-    data: data,
   })
     .done(function (values) {
       // console.log(values);

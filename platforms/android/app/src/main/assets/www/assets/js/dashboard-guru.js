@@ -2,6 +2,14 @@ var firstCon = firstConnection();
 var user_id = window.localStorage.getItem("userID");
 
 if (firstCon == "online") {
+  $(document).ready(function () {
+    checkIsLoggedIn().done(function (values) {
+      if (values.status_login == false) {
+        pages("login");
+      }
+    });
+  });
+
   // presensi
   data = {
     jenis_presensi: "all",

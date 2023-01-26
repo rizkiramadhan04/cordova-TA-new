@@ -18,7 +18,7 @@ $(document).ready(function () {
   // console.log(moment());
 
   $("#nama_user_izin").val(nama_user);
-  console.log($("#nama_user_izin").val(nama_user));
+  // console.log($("#nama_user_izin").val(nama_user));
   $("#namePresensiUser").append(nama_user);
   $("#timePresensiUser").append(date_time);
 
