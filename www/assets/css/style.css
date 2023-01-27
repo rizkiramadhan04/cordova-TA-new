@@ -7924,38 +7924,6 @@ body.dark-mode.rtl-mode
   color: #fff;
 }
 
-.section-cupon-promo {
-  width: 90%;
-  margin: 35px auto;
-}
-
-.section-cupon-promo .left-kupon {
-  width: 48%;
-  float: left;
-}
-
-.section-cupon-promo .right-kupon {
-  width: 48%;
-  float: right;
-}
-
-.section-cupon-promo .div-kupon {
-  background: white;
-  text-align: center;
-  padding-bottom: 35px;
-  border-radius: 10px;
-}
-
-.section-cupon-promo .div-kupon img {
-  width: 100%;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.section-cupon-promo .div-kupon span {
-  font-size: 16px;
-}
-
 .btn-lihat-hadiah a {
   padding: 12px 30px;
   /* margin-top: 23px; */
@@ -7969,81 +7937,9 @@ body.dark-mode.rtl-mode
   margin-top: 15px;
 }
 
-.section-cupon-promo .kupon {
-  display: inline-block;
-}
-
-.section-cupon-promo .list-hadiah {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.section-cupon-promo .title span {
-  font-size: 14px;
-  color: #58d68d;
-  margin-left: 5px;
-  font-weight: bolder;
-}
-
-.section-cupon-promo .img-list-hadiah ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.section-cupon-promo .img-list-hadiah ul li {
-  margin-bottom: 10px;
-}
-
-.section-cupon-promo .img-list-hadiah ul li img {
-  width: 100%;
-}
-
-#src-berita:before {
-  height: 50px !important;
-}
-
-#src-berita .wallet-card {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-#src-berita .search-berita {
-  width: 90%;
-  margin: 7px auto;
-  position: relative;
-}
-
-#src-berita .search-berita input {
-  width: 100%;
-  padding: 8px 5px;
-  border-radius: 10px;
-  border-color: transparent;
-}
-
-#page-berita {
-  width: 100%;
-}
-
 .section-page {
   width: 92%;
   margin: 20px auto;
-}
-
-#page-berita .section-heading {
-  width: 100%;
-}
-
-.section-berita {
-  margin-top: 5px;
-  display: inline-block;
-  width: 100%;
-}
-
-.section-berita .list-kategori {
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  grid-gap: 3%;
-  text-align: center;
 }
 
 a.btn-list-kategori {
@@ -8056,304 +7952,6 @@ a.btn-list-kategori {
 img.img-pom {
   width: 15%;
   margin-right: 3px;
-}
-
-#dsb-vcr-kpn .title {
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  font-size: 11px;
-}
-
-#dsb-vcr-kpn .title .icon-voucher {
-  width: 80%;
-}
-
-#dsb-vcr-kpn .title .icon-arrow {
-  width: 80%;
-  margin-left: 7px;
-}
-
-#count-voucher:before {
-  height: 50px !important;
-}
-
-#count-voucher .wallet-card {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-#count-voucher .jmlvoucher {
-  width: 90%;
-  margin: 7px auto;
-  background: white;
-  padding: 7px;
-  border-radius: 10px;
-  display: flex;
-  /* text-align: center; */
-}
-
-#count-voucher .jmlvoucher span {
-  margin-left: 10px;
-  font-size: 12px;
-  margin-top: 4px;
-  color: #0d0d40;
-}
-
-#list-voucher .card {
-  margin-bottom: 20px;
-}
-
-#list-voucher .card-body {
-  padding: 0 !important;
-  border-radius: 10px;
-}
-
-#list-voucher .card-image img {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-
-#list-voucher .card-status {
-  padding: 15px;
-  font-size: 13px;
-}
-
-#list-voucher .btn-pindai {
-  background: #0d0d66;
-  color: white;
-  padding: 11px 20px;
-  border-radius: 10px;
-  display: block;
-}
-
-#list-voucher .btn-disabled {
-  background: #e5e7e9;
-  color: white;
-  padding: 11px 20px;
-  border-radius: 10px;
-  display: block;
-}
-
-#list-voucher .card-keterangan {
-  padding: 15px;
-  font-size: 11px;
-}
-
-/*#voucher-user .claimed {
-    color: #0b9b0b;
-}
-
-#voucher-user .unclaimed {
-    color: #c9314d;
-}
-*/
-#scan-voucher:before {
-  height: 250px !important;
-}
-
-#scan-voucher .card-image img {
-  width: 100%;
-}
-
-#scan-voucher .card-detail {
-  font-size: 16px;
-}
-
-#scan-voucher .card-status {
-  margin-top: 30px;
-  text-align: left;
-}
-
-#scan-voucher table {
-  width: 100%;
-}
-
-#scan-voucher .card-keterangan {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-#scan-voucher .btn-pakai-voucher {
-  margin-top: 15px;
-  width: 100%;
-  text-align: center;
-}
-
-#scan-voucher .btn-pakai-voucher a {
-  background: #181881;
-  color: white;
-  /* padding: 10px 35px; */
-  width: 100%;
-  text-align: center;
-  display: block;
-  border-radius: 10px;
-  display: block;
-  padding: 10px 0;
-}
-
-#scan-voucher .claimed {
-  color: #0b9b0b;
-}
-
-#scan-voucher .unclaimed {
-  color: #c9314d;
-}
-
-#src-site:before {
-  height: 50px !important;
-}
-
-#src-site .wallet-card {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-#src-site .search-site {
-  width: 90%;
-  margin: 7px auto;
-}
-
-#src-site .search-site input {
-  width: 100%;
-  padding: 8px 5px;
-  border-radius: 10px;
-  border-color: transparent;
-}
-
-#page-site .section-heading {
-  width: 100%;
-}
-
-#page-site .section-site {
-  background: white;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-bottom: 15px;
-}
-
-#page-site .detail-site {
-  padding: 10px;
-}
-
-#page-site .img-site img {
-  width: 100%;
-}
-
-#page-site .name-site {
-  font-weight: bolder;
-  font-size: 13px;
-}
-
-#page-site .text-site {
-  line-height: normal;
-}
-
-#page-site .text-site span {
-  font-size: 11px;
-  color: black;
-}
-
-#page-site .img-loc-site img {
-  width: 50%;
-  display: block;
-  margin: 15px auto 0 auto;
-}
-
-#page-site .img-loc-site span {
-  font-size: 12px;
-  color: black;
-}
-
-#src-detail-site .wallet-card {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-#src-detail-site .search-site {
-  width: 90%;
-  margin: 7px auto;
-}
-
-#src-detail-site .search-site input {
-  width: 100%;
-  padding: 8px 5px;
-  border-radius: 10px;
-  border-color: transparent;
-}
-
-#src-detail-site:before {
-  height: 50px !important;
-}
-
-#page-detail-site {
-  /* display: inline-block;*/
-  width: 100%;
-}
-
-#page-detail-site .content {
-  /* position: relative; */
-  background: white;
-  height: auto;
-}
-
-#page-detail-site .image-detail {
-  position: relative;
-  margin-top: -40px;
-}
-
-#page-detail-site .content-detailisi-site {
-  background: white;
-  position: relative;
-  top: -68px;
-  width: 90%;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-#page-detail-site .isi-detail-site {
-  padding: 14px;
-  text-align: center;
-}
-
-#page-detail-site .name-site {
-  /*text-align: center;*/
-  margin-top: 10px;
-  color: black;
-  font-weight: bolder;
-  font-size: 17px;
-}
-
-#page-detail-site .address-site {
-  margin-top: 10px;
-}
-
-#page-detail-site .rating-site {
-  margin-top: 10px;
-}
-
-#page-detail-site .btn-rute-site {
-  text-align: center;
-  /*margin-top: 15px;*/
-  background: #141487;
-  /* color: blueviolet; */
-  border-radius: 10px;
-  padding: 10px;
-  width: 70%;
-  margin: 20px auto;
-}
-
-#page-detail-site .btn-rute-site a {
-  color: white;
-}
-
-.peta-site-detail {
-  padding-bottom: 25px;
-}
-
-.peta-site-detail .peta-site {
-  width: 90%;
-  margin: 0 auto;
-  /* background: white; */
 }
 
 .img-peta {
@@ -8395,25 +7993,6 @@ img.img-pom {
   border-radius: 10px;
 }
 
-#exampleModalCenter .btn-lihat-voucher {
-  width: 50%;
-  background: #00aca8;
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 7px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  bottom: -20px;
-  z-index: 100;
-}
-
-#exampleModalCenter .btn-lihat-voucher {
-  color: white !important;
-}
-
 #exampleModalCenter .button-modal {
   width: 50%;
   background: #00aca8;
@@ -8441,111 +8020,6 @@ img.img-pom {
 
 #exampleModalCenter .icon-close img {
   width: 50%;
-}
-
-#src-produk:before {
-  height: 150px !important;
-}
-
-#src-produk .wallet-card {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-#src-produk .search-produk {
-  width: 90%;
-  margin: 7px auto;
-  position: relative;
-}
-
-#src-produk button {
-  position: absolute;
-  right: -10px;
-  background: transparent !important;
-  color: gray !important;
-  border-color: transparent !important;
-  top: 5px;
-}
-
-#src-produk .search-produk input {
-  width: 100%;
-  padding: 8px 5px;
-  border-radius: 10px;
-  border-color: transparent;
-}
-
-.page-produk:before {
-  height: 120px !important;
-}
-
-#produk-page {
-  margin-top: 30px;
-  display: block;
-}
-
-#produk-page .kategori-produk div {
-  width: 100%;
-  /* background: #3ecfc8 !important;*/
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  font-size: 17px;
-}
-
-#produk-page .kategori-produk .all {
-  background: #3ecfc8 !important;
-}
-
-#produk-page .kategori-produk .sparepart {
-  background: #f6d435 !important;
-}
-
-#produk-page .kategori-produk .ron {
-  background: #074cb5 !important;
-}
-
-#produk-page .kategori-produk img {
-  width: 8%;
-}
-
-#produk-page .kategori-produk div span {
-  /* padding-top: 29px; */
-  margin-left: 7px;
-  font-size: 14px;
-}
-
-#produk-page .list-produk {
-  margin-top: 20px;
-}
-
-#produk-page .lst-produk {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  /*margin-top: 20px;*/
-}
-
-#produk-page .img-produk {
-  background: white;
-  text-align: center;
-  border-radius: 10px;
-}
-
-#produk-page .img-produk img {
-  width: 100%;
-  margin: 0 auto;
-  padding: 5px;
-  height: 199px;
-}
-
-#produk-page .detail-produk {
-  padding: 5px;
-}
-
-#produk-page .detail-produk span {
-  color: black;
-  font-weight: bolder;
-  font-size: 11px;
 }
 
 .new-menu-content .img-menu-content img {
@@ -8576,29 +8050,6 @@ img.img-pom {
   word-break: break-word;
 }
 
-.section-cupon-promo .card-image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.section-cupon-promo .card-detail {
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-
-.section-cupon-promo .promo-lihat-hadiah {
-  margin-top: 13px;
-  background: #074cb5;
-  text-align: center;
-  padding: 8px 0px;
-  border-radius: 10px;
-  color: white;
-}
-
-.section-cupon-promo .list-kupon {
-  margin-bottom: 15px;
-}
-
 .list-hadiah.gold .title-hadiah {
   font-size: 20px;
   color: #074cb5;
@@ -8609,16 +8060,6 @@ img.img-pom {
   font-size: 20px;
   color: #074cb5;
   margin-bottom: 20px;
-}
-
-.list-hadiah.gold .banner-promo-bottom {
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
-
-.list-hadiah.silver .banner-promo-bottom {
-  margin-top: 50px;
-  margin-bottom: 15px;
 }
 
 .sk-register {
@@ -8658,212 +8099,12 @@ img.img-pom {
   display: none !important;
 }
 
-#produk-page-detail .div-image-detail {
-  background: white;
-  border-radius: 10px;
-  position: relative;
-  top: -11px;
-}
-
-#produk-page-detail .div-image-detail .image-produk {
-  width: 90%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-#produk-page-detail .div-image-detail .image-produk img {
-  width: 100%;
-}
-
-#produk-page-detail .text-detail-produk {
-  display: block;
-  margin-top: 20px;
-  background: white;
-  padding-bottom: 10px;
-}
-
-#produk-page-detail .text-detail-produk .text {
-  padding: 12px 24px;
-}
-
-#produk-page-detail .text-detail-produk .judul-produk {
-  color: black;
-  font-size: 20px;
-  font-weight: bolder;
-  text-align: left;
-}
-
-#produk-page-detail .text-detail-produk .judul-produk span {
-  word-break: break-word;
-}
-
-#produk-page-detail .text-detail-produk .harga {
-  margin-top: 15px;
-}
-
-#produk-page-detail .text-detail-produk .harga span {
-  font-size: 18px;
-  color: #3ad7d0;
-  font-weight: bolder;
-}
-
-#produk-page-detail .text-detail-produk .description {
-  margin-top: 15px;
-  font-size: 13px;
-  text-align: justify;
-}
-
-#produk-page-detail .text-detail-produk .description span {
-  word-break: break-word;
-  letter-spacing: initial;
-}
-
-#produk-page-detail .btn-cek-produk {
-  padding: 12px;
-}
-
-#produk-page-detail .btn-site-terdekat {
-  text-align: center;
-  color: white;
-  background: #0c0c81;
-  padding: 8px;
-  border-radius: 7px;
-}
-
 .appFooter {
   display: none;
 }
 
 #appCapsule {
   padding-bottom: 150px;
-}
-
-.app-call-center {
-  position: fixed;
-  z-index: 1000;
-  bottom: 75px;
-  right: 15px;
-}
-
-.app-call-center .call-center {
-  text-align: right;
-}
-
-.app-call-center .call-center img {
-  width: 45%;
-}
-
-#page-call-center:before {
-  height: 250px !important;
-}
-
-#page-call-center .title {
-  text-align: center;
-  color: #171781;
-  font-size: 19px;
-}
-
-#page-call-center .beberapa-contact {
-  color: #787373;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 10px;
-  word-break: break-word;
-}
-
-#page-call-center .img-banner-layanan {
-  margin-top: 25px;
-}
-
-#page-call-center .img-banner-layanan img {
-  width: 100%;
-}
-
-#page-call-center .contact {
-  margin-top: 20px;
-}
-
-#page-call-center .list-contact {
-  display: grid;
-  grid-template-columns: 30% 2% 68%;
-  margin-bottom: 10px;
-}
-
-#page-call-center .list-contact .img-1 {
-  /*background: #2b2b9b;*/
-  border-radius: 5px;
-  text-align: center;
-}
-
-#page-call-center .list-contact .img-1 img {
-  padding: 10px 8px;
-  width: 60%;
-  /* margin: 0 auto; */
-}
-
-#page-call-center .list-contact .keterangan {
-  /*background: #2b2b9b;*/
-  border-radius: 5px;
-  padding: 7px 7px;
-  text-align: center;
-  font-size: 14px;
-  color: white;
-}
-
-#page-call-center .text-sosmed {
-  text-align: center;
-}
-
-#page-call-center .follow-sosmed {
-  margin-top: 10px;
-}
-
-#page-call-center .follow-sosmed .sosmed {
-  background: white;
-  border: 1px solid gray;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-#page-call-center .follow-sosmed .text-sosmed {
-  display: flex;
-  padding: 10px;
-}
-
-#page-call-center .follow-sosmed img {
-  width: 50%;
-}
-
-/*#produk-page-detail .img-all-produk
-{
-    display: flex;
-    width: 100%;
-    text-align: center;
-}
-
-#produk-page-detail .img-all-produk img
-{
-    width: 30%;
-    background: white;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0 5px;
-}*/
-
-#produk-page-detail .img-all-produk {
-  display: grid;
-  grid-template-columns: 32% 32% 31%;
-  grid-column-gap: 10px;
-}
-
-#produk-page-detail .img-all-produk div {
-  background: white;
-  border-radius: 5px;
-}
-
-#produk-page-detail .img-all-produk img {
-  width: 100%;
-  padding: 5px;
 }
 
 .slider-agenda-detail img {
@@ -8900,14 +8141,6 @@ img.img-pom {
   /* white-space: break-spaces; */
 }
 
-.load-more-produk {
-  text-align: center;
-  font-size: 16px;
-  color: #2f2f8f;
-  margin-top: 25px;
-  text-decoration: underline;
-}
-
 #page-privasi .card-body {
   color: black;
 }
@@ -8924,24 +8157,6 @@ img.img-pom {
   word-break: break-word;
   /* letter-spacing: 0px; */
   margin-bottom: 15px;
-}
-
-#menu-listed .total-kupon {
-  display: inline-block;
-  margin-top: 10px;
-  width: 100%;
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-#menu-listed .div-total-kupon {
-  font-size: 13px;
-  color: black;
-}
-
-#menu-listed .div-total-kupon span {
-  margin-left: 7px;
 }
 
 #menu-listed .card-image img {
@@ -8996,26 +8211,6 @@ img.img-pom {
   color: white;
 }
 
-#img-detail-kupon {
-  padding: 15px;
-}
-
-#detail-kupon-desc .text-desc {
-  /*font-size: 12px;*/
-  color: black;
-}
-
-#detail-kupon-desc .text-desc .judul {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-#detail-kupon-desc .text-desc ul {
-  font-size: 12px;
-  text-align: justify;
-  word-break: break-word;
-}
-
 .img-ceklis-izin {
   display: none;
 }
@@ -9028,53 +8223,12 @@ img.img-pom {
   display: inline;
 }
 
-.success-upload-struk .text-success-upload {
-  padding: 15px;
-  text-align: center;
-}
-
-.success-upload-struk .btn-lihat-kupon {
-  margin-top: 20px;
-  /* margin-bottom: 20px; */
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.success-upload-struk .btn-lihat-kupon a {
-  background: #2c2c7e;
-  color: white;
-  padding: 10px 20px;
-  font-size: 13px;
-  border-radius: 8px;
-}
-
-#img-success-kupon {
-  padding: 15px;
-}
-
-#img-success-kupon img {
-  width: 100%;
-}
-
 .img-ceklis-acara {
-  display: none;
-}
-
-.img-ceklis-promo {
   display: none;
 }
 
 .img-ceklis-umum {
   display: inline;
-}
-
-#src-berita button {
-  position: absolute;
-  right: -10px;
-  background: transparent !important;
-  color: gray !important;
-  border-color: transparent !important;
-  top: 5px;
 }
 
 #page-message .card {
@@ -9096,12 +8250,6 @@ img.img-pom {
 
 #page-message .waktu-message {
   font-size: 11px;
-}
-
-#menu-kupon .load-more-kupon {
-  text-align: center;
-  color: #4949db;
-  margin-top: 20px;
 }
 
 .load-more-msg {
@@ -9202,8 +8350,6 @@ img.img-pom {
   height: 32px;
 }
 
-/* list struk */
-
 #list-data .card-image {
   border-radius: 10px;
   align-items: center;
@@ -9232,23 +8378,3 @@ img.img-pom {
   font-size: 11px;
   margin-top: 10px;
 }
-
-#list-data .btn-pakai-voucher {
-  margin-top: 15px;
-  width: 100%;
-  text-align: center;
-}
-
-#list-data .btn-pakai-voucher a {
-  background: grey;
-  color: white;
-  /* padding: 10px 35px; */
-  width: 100%;
-  text-align: center;
-  display: block;
-  border-radius: 10px;
-  display: block;
-  padding: 10px 0;
-}
-
-/* list struk */
