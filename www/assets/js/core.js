@@ -183,7 +183,7 @@ function fotoActionSheet(tipe_foto) {
     );
   } else {
     // console.log("Hello");
-    window.plugins.actionsheet.show(options);
+    window.plugins.actionsheet.show();
   }
   // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
 }

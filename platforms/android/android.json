@@ -9,7 +9,7 @@
         "parents": {
           "/manifest/application": [
             {
-              "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+              "xml": "<application android:usesCleartextTraffic=\"true\" />",
               "count": 2,
               "mode": "merge",
               "id": "config.xml",
@@ -18,28 +18,12 @@
                 "android:hardwareAccelerated": "true",
                 "android:icon": "@mipmap/ic_launcher",
                 "android:label": "@string/app_name",
-                "android:name": "android.permission.CAMERA",
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
             },
             {
               "xml": "<intent-filter android:autoVerify=\"true\"><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:host=\"onelink-basic-app.onelink.me\" android:pathPrefix=\"/H5hv\" android:scheme=\"https\" /></intent-filter>",
-              "count": 2,
-              "mode": "merge",
-              "id": "config.xml",
-              "oldAttrib": {
-                "android:autoVerify": "true",
-                "android:hardwareAccelerated": "true",
-                "android:icon": "@mipmap/ic_launcher",
-                "android:label": "@string/app_name",
-                "android:name": "android.permission.CAMERA",
-                "android:supportsRtl": "true",
-                "android:usesCleartextTraffic": "true"
-              }
-            },
-            {
-              "xml": "<application android:usesCleartextTraffic=\"true\" />",
               "count": 1,
               "mode": "merge",
               "id": "config.xml",
@@ -48,7 +32,6 @@
                 "android:hardwareAccelerated": "true",
                 "android:icon": "@mipmap/ic_launcher",
                 "android:label": "@string/app_name",
-                "android:name": "android.permission.CAMERA",
                 "android:supportsRtl": "true",
                 "android:usesCleartextTraffic": "true"
               }
@@ -195,8 +178,7 @@
               "xml": "<activity android:label=\"@string/share_name\" android:name=\"com.google.zxing.client.android.HelpActivity\"><intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></activity>",
               "count": 1
             }
-          ],
-          "application": []
+          ]
         }
       },
       "config.xml": {

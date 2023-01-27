@@ -87,7 +87,6 @@
     <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
     <splash density="port-xxhdpi" src="res/screen/android/screen-xxhdpi-portrait.png" />
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
-        <uses-permission android:name="android.permission.CAMERA" />
         <application android:usesCleartextTraffic="true" />
         <intent-filter android:autoVerify="true">
             <action android:name="android.intent.action.VIEW" />

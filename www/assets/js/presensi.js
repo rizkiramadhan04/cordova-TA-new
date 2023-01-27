@@ -2,6 +2,7 @@ var nama_user = window.localStorage.getItem("name");
 var status_user = window.localStorage.getItem("status_user");
 
 $(document).ready(function () {
+  fotoActionSheet("scan");
   $("#resultCheckPresensi").hide();
   $("#scanner-reader-content").hide();
   $("#tombol-submit").hide();
