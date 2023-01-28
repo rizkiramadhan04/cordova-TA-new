@@ -96,8 +96,8 @@ function alertDismissed() {
 function optionsCamera() {
   var optionsCamera = {
     quality: 75,
-    destinationType: Camera.DestinationType.DATA_URL,
-    sourceType: Camera.PictureSourceType.CAMERA,
+    // destinationType: Camera.DestinationType.DATA_URL,
+    // sourceType: Camera.PictureSourceType.SCAN,
     allowEdit: false,
     encodingType: Camera.EncodingType.JPEG,
     targetWidth: 700,
@@ -128,7 +128,7 @@ function optionsGallery() {
 var callbackActionSheet = function (tipe_foto, buttonIndex) {
   setTimeout(function () {
     // like other Cordova plugins (prompt, confirm) the buttonIndex is 1-based (first button is index 1)
-    //console.log('button index: ' + buttonIndex);
+    // console.log('button index: ' + buttonIndex);
     //console.log('tipe foto: ' + tipe_foto);
 
     var opsi;
@@ -139,17 +139,10 @@ var callbackActionSheet = function (tipe_foto, buttonIndex) {
     }
     navigator.camera.getPicture(
       function cameraSuccess(imageUri) {
-        //console.log(imageUri);
+        pages('presensi');
+        console.log(imageUri);
         //console.log(tipe_foto);
         window.localStorage.removeItem("camera_active_sess");
-        var foto = "data:image/jpeg;base64," + imageUri;
-
-        $("#real_foto_" + tipe_foto).attr("src", foto);
-        $("#real_foto_" + tipe_foto + " img").fakecrop({
-          wrapperWidth: 90,
-          wrapperHeight: 82,
-        });
-        $("#foto_text_" + tipe_foto).val(foto);
       },
       function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
@@ -165,14 +158,10 @@ function fotoActionSheet(tipe_foto) {
   var options = {
     androidTheme:
       window.plugins.actionsheet.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT, // default is THEME_TRADITIONAL
-    title: "Ambil Foto",
-    subtitle: "Ambil foto dari kamera atau dari gallery", // supported on iOS only
-    buttonLabels: ["Kamera", "Gallery"],
     androidEnableCancelButton: true, // default false
     winphoneEnableCancelButton: true, // default false
-    addCancelButtonWithLabel: "Batal",
     position: [20, 40], // for iPad pass in the [x, y] position of the popover
-    destructiveButtonLast: true, // you can choose where the destructive button is shown
+    destructiveButtonLast: false, // you can choose where the destructive button is shown
   };
   // Depending on the buttonIndex, you can now call shareViaFacebook or shareViaTwitter
   // of the SocialSharing plugin (https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
@@ -183,7 +172,9 @@ function fotoActionSheet(tipe_foto) {
     );
   } else {
     // console.log("Hello");
-    window.plugins.actionsheet.show();
+    window.plugins.actionsheet.show(options,
+      callbackActionSheet.bind(this, tipe_foto)
+);
   }
   // window.plugins.actionsheet.show(options, callbackActionSheet.bind(this, tipe_foto));
 }

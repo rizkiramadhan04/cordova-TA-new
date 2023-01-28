@@ -2,7 +2,7 @@ var nama_user = window.localStorage.getItem("name");
 var status_user = window.localStorage.getItem("status_user");
 
 $(document).ready(function () {
-  fotoActionSheet("scan");
+  $(".select2-basic").select2();
   $("#resultCheckPresensi").hide();
   $("#scanner-reader-content").hide();
   $("#tombol-submit").hide();
@@ -34,9 +34,9 @@ function openScanner() {
 // console.log(openScanner());
 
 function onScanSuccess(qrCodeMessage) {
+  $("#containerButtonOpen").hide();
   $("#resultCheckPresensi").show();
   $("#tombol-submit").show();
-  $("#containerButtonOpen").hide();
 
   html5QrcodeScanner.clear();
   // console.log("Hasil pembacaan QR : ", qrCodeMessage);

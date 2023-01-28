@@ -298,6 +298,7 @@ dependencies {
     implementation(project(path: ":CordovaLib"))
     implementation "androidx.webkit:webkit:1.4.0"
     implementation "com.google.android.gms:play-services-location:16.+"
+    implementation "androidx.core:core:1.6.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

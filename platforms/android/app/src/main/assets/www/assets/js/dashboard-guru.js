@@ -331,6 +331,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[0].nama_guru +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[0].tanggal +
             "</strong><br/></p>" +
@@ -357,6 +362,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[1].nama_guru +
             "</strong><br/></p>" +
+            ( results[1].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[1].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[1].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[1].tanggal +
             "</strong><br/></p>" +
@@ -383,6 +393,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[2].nama_guru +
             "</strong><br/></p>" +
+            ( results[2].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[2].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[2].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[2].tanggal +
             "</strong><br/></p>" +
@@ -413,6 +428,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[0].nama_guru +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[0].tanggal +
             "</strong><br/></p>" +
@@ -439,6 +459,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[1].nama_guru +
             "</strong><br/></p>" +
+            ( results[1].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[1].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[1].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[1].tanggal +
             "</strong><br/></p>" +
@@ -469,6 +494,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[0].nama_guru +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[0].tanggal +
             "</strong><br/></p>" +

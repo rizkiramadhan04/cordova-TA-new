@@ -68,14 +68,14 @@ if (firstCon == "online") {
               "<p>Kitab : <strong>" +
               data_pct.jenis_kitab +
               "</strong><br/></p>" +
+              "<p>Nama Guru : <strong>" +
+              data_pct.nama_guru +
+              "</strong><br/></p>" +
               (data_pct.jenis_kitab == "Al Quran"
                 ? "<p>Juz : <strong>" + data_pct.juz + "</strong><br/></p>"
                 : "<p>No Iqro : <strong>" +
                   data_pct.no_iqro +
                   "</strong><br/></p>") +
-              "<p>Nama Guru : <strong>" +
-              data_pct.nama_guru +
-              "</strong><br/></p>" +
               "<p>Tanggal : <strong>" +
               data_pct.tanggal +
               "</strong><br/></p>" +

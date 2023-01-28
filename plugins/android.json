@@ -75,6 +75,10 @@
     },
     "es6-promise-plugin": {
       "PACKAGE_NAME": "com.rizkiramadhan.aplikasiTA"
+    },
+    "cordova-plugin-camera": {
+      "ANDROIDX_CORE_VERSION": "1.6.+",
+      "PACKAGE_NAME": "com.rizkiramadhan.aplikasiTA"
     }
   },
   "dependent_plugins": {

@@ -318,7 +318,7 @@ if (firstCon == "online") {
         //   //navigator.notification.alert(values.message, alertDismissed, TITLE_ALERT, 'Ok');
         var result_list = "";
 
-        if (results.length == 3) {
+        if (results.length == 3 || results.length > 3) {
           result_list +=
             '<a href="javascript:void(0)">' +
             '<div class="row detail item mb-2 p-0">' +
@@ -331,6 +331,11 @@ if (firstCon == "online") {
             "<p>Kitab : <strong>" +
             results[0].jenis_kitab +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Nama Guru : <strong>" +
             results[0].nama_guru +
             "</strong><br/></p>" +
@@ -357,6 +362,11 @@ if (firstCon == "online") {
             "<p>Kitab : <strong>" +
             results[1].jenis_kitab +
             "</strong><br/></p>" +
+            ( results[1].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[1].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[1].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Nama Guru : <strong>" +
             results[1].nama_guru +
             "</strong><br/></p>" +
@@ -383,6 +393,11 @@ if (firstCon == "online") {
             "<p>Kitab : <strong>" +
             results[2].jenis_kitab +
             "</strong><br/></p>" +
+            ( results[2].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[2].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[2].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Nama Guru : <strong>" +
             results[2].nama_guru +
             "</strong><br/></p>" +
@@ -408,6 +423,11 @@ if (firstCon == "online") {
             "<p>Nama Murid : <strong>" +
             results[0].nama_murid +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Kitab : <strong>" +
             results[0].jenis_kitab +
             "</strong><br/></p>" +
@@ -440,6 +460,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[1].nama_guru +
             "</strong><br/></p>" +
+            ( results[1].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[1].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[1].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[1].tanggal +
             "</strong><br/></p>" +
@@ -468,6 +493,11 @@ if (firstCon == "online") {
             "<p>Nama Guru : <strong>" +
             results[0].nama_guru +
             "</strong><br/></p>" +
+            ( results[0].jenis_kitab == "Al Quran"
+                ? "<p>Juz : <strong>" +  results[0].juz + "</strong><br/></p>"
+                : "<p>No Iqro : <strong>" +
+                results[0].no_iqro +
+                  "</strong><br/></p>") +
             "<p>Tanggal : <strong>" +
             results[0].tanggal +
             "</strong><br/></p>" +
@@ -551,7 +581,7 @@ if (firstCon == "online") {
         //   //navigator.notification.alert(values.message, alertDismissed, TITLE_ALERT, 'Ok');
         var result_list = "";
 
-        if (results.length == 3) {
+        if (results.length == 3 || results.length > 3) {
           result_list +=
             '<a href="javascript:void(0)">' +
             '<div class="row detail item mb-2 p-0">' +
