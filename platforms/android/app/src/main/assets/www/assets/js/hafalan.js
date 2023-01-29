@@ -10,8 +10,8 @@ if (firstCon == "online") {
       $("#appBottomMenuMurid").css("display", "none");
     });
 
-    $("#title-page").append("List Menyimak");
-    $("#title-section").append("Daftar menyimak anda");
+    $("#title-page").append("List Penilaian");
+    $("#title-section").append("Daftar penilaian anda");
 
     $.ajax({
       beforeSend: function (xhr) {
@@ -261,7 +261,7 @@ function confirm(param) {
   }
 
   navigator.notification.confirm(
-    "Anda ingin menghapus data hafalan ini!", // message
+    "Anda ingin menghapus data penilaian ini!", // message
     onConfirm, // callback to invoke with index of button pressed
     TITLE_ALERT, // title
     ["Oke", "Tidak"] // buttonLabels

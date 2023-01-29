@@ -8,8 +8,8 @@ if (firstCon == "online") {
       $("#appBottomMenuMurid").css("display", "none");
     });
 
-    $("#title-page").append("List Mengajar");
-    $("#title-section").append("Daftar mengajar anda");
+    $("#title-page").append("List Pencatatan");
+    $("#title-section").append("Daftar pencatatan anda");
 
     $.ajax({
       beforeSend: function (xhr) {
@@ -262,7 +262,7 @@ function confirm(param) {
   }
 
   navigator.notification.confirm(
-    "Anda ingin menghapus data mengajar ini!", // message
+    "Anda ingin menghapus data pencatatan ini!", // message
     onConfirm, // callback to invoke with index of button pressed
     TITLE_ALERT, // title
     ["Oke", "Tidak"] // buttonLabels
